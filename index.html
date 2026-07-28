@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Philly Creative • Gestão de Marketing Digital | Columbus, Ohio</title>
     <meta name="description" content="Vamos pro digital. Pacotes de gestão de marketing, criação de conteúdo, logomarcas, sites e artes profissionais para o seu negócio. Atendemos todo o Brasil e Estados Unidos.">
+    <meta name="theme-color" content="#0a0a0f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Philly Creative">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="assets/images/logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -1172,28 +1178,28 @@
                         </div>
                     </div>
 
-                    <div class="mt-10 flex flex-wrap gap-4">
+                    <div class="mt-10 grid grid-cols-2 gap-3 sm:gap-4">
                         <a href="https://wa.me/12678265740" target="_blank"
-                           class="flex-1 sm:flex-none inline-flex items-center justify-center gap-x-3 bg-emerald-600 hover:bg-emerald-500 transition-all font-bold px-8 h-14 rounded-2xl shine">
+                           class="inline-flex items-center justify-center gap-x-2.5 bg-emerald-600 hover:bg-emerald-500 transition-all font-bold px-4 sm:px-6 h-16 rounded-2xl shine text-sm sm:text-base">
                             <i class="fa-brands fa-whatsapp text-2xl"></i>
                             <span>WhatsApp</span>
                         </a>
 
-                        <a href="tel:+18312083961"
-                           class="flex-1 sm:flex-none inline-flex items-center justify-center gap-x-3 bg-blue-600 hover:bg-blue-500 transition-all font-bold px-8 h-14 rounded-2xl shine">
+                        <a href="tel:+183****3961"
+                           class="inline-flex items-center justify-center gap-x-2.5 bg-blue-600 hover:bg-blue-500 transition-all font-bold px-4 sm:px-6 h-16 rounded-2xl shine text-sm sm:text-base">
                             <i class="fa-solid fa-phone text-xl"></i>
                             <span>Ligar Agora</span>
                         </a>
 
                         <a href="https://www.instagram.com/phillycreative.design" target="_blank"
-                           class="flex-1 sm:flex-none inline-flex items-center justify-center gap-x-3 glass hover:bg-white/10 transition-all font-semibold px-8 h-14 rounded-2xl">
+                           class="inline-flex items-center justify-center gap-x-2.5 glass hover:bg-white/10 transition-all font-bold px-4 sm:px-6 h-16 rounded-2xl text-sm sm:text-base">
                             <i class="fa-brands fa-instagram text-xl"></i>
                             <span>Instagram</span>
                         </a>
 
                         <a href="mailto:contato@phillycreative.com"
-                           class="flex-1 sm:flex-none inline-flex items-center justify-center gap-x-3 glass hover:bg-white/10 transition-all font-semibold px-8 h-14 rounded-2xl">
-                            <i class="fa-solid fa-envelope"></i>
+                           class="inline-flex items-center justify-center gap-x-2.5 glass hover:bg-white/10 transition-all font-bold px-4 sm:px-6 h-16 rounded-2xl text-sm sm:text-base">
+                            <i class="fa-solid fa-envelope text-xl"></i>
                             <span>Email</span>
                         </a>
                     </div>
@@ -1516,6 +1522,13 @@
             initTiltCards();
             initContactForm();
             initKeyboardShortcuts();
+
+            // Register Service Worker for PWA
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('./sw.js').then(() => {
+                    console.log('%c[Philly Creative v2] PWA Service Worker registrado.', 'color:#f59e0b');
+                }).catch(err => console.warn('SW registration failed:', err));
+            }
 
             console.log('%c[Philly Creative v2] Website inicializado com sucesso. UX premium ativo.', 'color:#f59e0b');
         });
