@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philly Creative • Gestão de Marketing Digital | Columbus, Ohio</title>
+    <meta name="description" content="Vamos pro digital. Pacotes de gestão de marketing, criação de conteúdo, logomarcas, sites e artes profissionais para o seu negócio. Atendemos todo o Brasil e Estados Unidos.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap');
+
+        :root {
+            --primary: #0a0a0f;
+            --accent: #f59e0b;
+            --accent-glow: rgba(245, 158, 11, 0.4);
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { -webkit-font-smoothing: antialiased; }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: var(--primary);
+        }
+
+        .heading-font {
+            font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+        }
+
+        /* === SCROLL PROGRESS BAR === */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #f59e0b, #fbbf24, #f59e0b);
+            z-index: 100;
+            width: 0%;
+            transition: width 0.1s ease;
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        /* === ANIMATED BACKGROUND ORBS === */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            pointer-events: none;
+            animation: float 20s ease-in-out infinite;
+        }
+        .orb-1 { width: 400px; height: 400px; background: #f59e0b; top: -100px; right: -100px; animation-delay: 0s; }
+        .orb-2 { width: 300px; height: 300px; background: #3b82f6; bottom: -50px; left: -50px; animation-delay: 5s; }
+        .orb-3 { width: 250px; height: 250px; background: #8b5cf6; top: 40%; left: 50%; animation-delay: 10s; }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -40px) scale(1.1); }
+            50% { transform: translate(-20px, 20px) scale(0.95); }
+            75% { transform: translate(40px, 30px) scale(1.05); }
+        }
+
+        /* === GLASSMORPHISM === */
+        .glass {
+            background: var(--glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+        }
+
+        .glass-strong {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* === NAVBAR === */
+        .nav-scrolled {
+            background-color: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom-color: rgba(255, 255, 255, 0.08);
+        }
+
+        /* === SCROLL REVEAL === */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+
+        /* === 3D CARD TILT === */
+        .tilt-card {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+            transform-style: preserve-3d;
+            will-change: transform;
+        }
+
+        /* === CARD HOVER === */
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 30px rgba(245, 158, 11, 0.08);
+            border-color: rgba(245, 158, 11, 0.2);
+        }
+
+        /* === GALLERY === */
+        .gallery-img {
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .gallery-card:hover .gallery-img {
+            transform: scale(1.06);
+        }
+        .gallery-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .gallery-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6);
+        }
+
+        /* === PACKAGE CARDS === */
+        .package-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .package-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .package-card.popular {
+            border: 2px solid #f59e0b;
+            box-shadow: 0 0 40px rgba(245, 158, 11, 0.12);
+        }
+        .package-card.popular:hover {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 50px rgba(245, 158, 11, 0.2);
+        }
+
+        /* === SERVICE ITEMS === */
+        .service-item {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .service-item:hover {
+            background-color: rgba(255, 255, 255, 0.04);
+            transform: translateX(6px);
+            border-color: rgba(245, 158, 11, 0.2);
+        }
+        .service-item:hover i {
+            color: #fbbf24;
+            transform: scale(1.1);
+        }
+        .service-item i {
+            transition: all 0.3s ease;
+        }
+
+        /* === GRADIENT TEXT === */
+        .gradient-text {
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* === CTA GLOW === */
+        .cta-glow {
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-glow::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .cta-glow:hover::before {
+            opacity: 1;
+        }
+
+        /* === FLOATING WHATSAPP === */
+        .float-wa {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 90;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse-wa 2.5s ease-in-out infinite;
+        }
+        .float-wa:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+        }
+        @keyframes pulse-wa {
+            0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4), 0 0 0 12px rgba(37, 211, 102, 0); }
+        }
+
+        /* === STAT COUNTER === */
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* === LOGO GRID === */
+        .logo-grid-item {
+            transition: all 0.3s ease;
+            opacity: 0.6;
+        }
+        .logo-grid-item:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        /* === FORM === */
+        .form-input {
+            transition: all 0.3s ease;
+        }
+        .form-input:focus {
+            border-color: rgba(245, 158, 11, 0.5);
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+        }
+
+        /* === BADGE === */
+        .marketing-badge {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            font-size: 0.75rem;
+            padding: 2px 10px;
+            border-radius: 9999px;
+            font-weight: 600;
+        }
+
+        .brochure-section {
+            scroll-margin-top: 80px;
+        }
+
+        /* === MARQUEE === */
+        .marquee {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .marquee-track {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* === SHINE EFFECT === */
+        .shine {
+            position: relative;
+            overflow: hidden;
+        }
+        .shine::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        .shine:hover::after {
+            left: 150%;
+        }
+
+        /* === MOBILE STICKY CTA === */
+        .mobile-cta-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 80;
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .mobile-cta-bar { display: block; }
+            body { padding-bottom: 70px; }
+            .float-wa { bottom: 80px; }
+        }
+
+        /* === SECTION DIVIDERS === */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        }
+
+        /* === TESTIMONIAL === */
+        .testimonial-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(245, 158, 11, 0.2);
+        }
+
+        /* Reduce motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+            .orb { display: none; }
+        }
+    </style>
+</head>
+<body class="bg-[#0a0a0f] text-white overflow-x-hidden">
+
+    <!-- SCROLL PROGRESS BAR -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#0a0a0f]/80 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-x-3 group">
+                    <img src="assets/images/logo.png" alt="Philly Creative" class="w-12 h-12 rounded-2xl transition-transform group-hover:scale-105">
+                    <div>
+                        <div class="font-bold text-lg sm:text-xl tracking-tighter whitespace-nowrap">PHILLY CREATIVE</div>
+                        <div class="text-[10px] text-white/50 -mt-1 font-medium">EST 2025 • COLUMBUS, OH</div>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
+                    <a href="#servicos" class="hover:text-amber-400 transition-colors">O que fazemos</a>
+                    <a href="#artes" class="hover:text-amber-400 transition-colors">Artes Digitais</a>
+                    <a href="#personalizado" class="hover:text-amber-400 transition-colors">Personalizado</a>
+                    <a href="#pacotes" class="hover:text-amber-400 transition-colors">Pacotes</a>
+                    <a href="#clientes" class="hover:text-amber-400 transition-colors">Clientes</a>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex items-center gap-x-3">
+                    <a href="#contato"
+                       class="hidden sm:inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold rounded-2xl border border-white/20 hover:bg-white hover:text-[#0a0a0f] transition-all active:scale-[0.985] shine">
+                        Fale Conosco
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn"
+                            class="md:hidden w-11 h-11 flex items-center justify-center text-white hover:bg-white/10 rounded-2xl transition-colors"
+                            aria-label="Menu">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-[#0a0a0f]">
+            <div class="px-6 py-6 flex flex-col gap-y-4 text-base font-medium">
+                <a href="#servicos" class="py-1 mobile-link">O que fazemos</a>
+                <a href="#artes" class="py-1 mobile-link">Artes Digitais</a>
+                <a href="#personalizado" class="py-1 mobile-link">Personalizado para seu negócio</a>
+                <a href="#pacotes" class="py-1 mobile-link">Nossos Pacotes</a>
+                <a href="#clientes" class="py-1 mobile-link">Nossos Clientes</a>
+                <div class="pt-4 border-t border-white/10 flex flex-col gap-y-3">
+                    <a href="#contato" class="py-3 text-center border border-white/20 rounded-2xl mobile-link">Fale Conosco</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="pt-20 min-h-[100dvh] flex items-center relative overflow-hidden">
+        <!-- Animated Orbs -->
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+
+        <div class="max-w-7xl mx-auto px-6 pt-12 pb-20 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="lg:col-span-7">
+                    <div class="inline-flex items-center gap-x-2 glass rounded-3xl px-4 py-1.5 mb-6 reveal active">
+                        <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                        <span class="text-xs font-semibold tracking-[1.5px] text-white/70">COLUMBUS, OHIO • ATENDEMOS TODO O PAÍS</span>
+                    </div>
+
+                    <h1 class="heading-font text-6xl lg:text-7xl xl:text-8xl leading-[1.02] tracking-tighter font-black mb-6 reveal active reveal-delay-1">
+                        VAMOS PRO<br>
+                        <span class="gradient-text">DIGITAL.</span>
+                    </h1>
+
+                    <p class="max-w-lg text-2xl text-white/80 font-light tracking-tight mb-10 reveal active reveal-delay-2">
+                        Confira nossos novos pacotes de gestão de marketing feitos para você!
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 reveal active reveal-delay-3">
+                        <a href="#pacotes"
+                           class="cta-glow group inline-flex items-center justify-center gap-x-3 bg-white hover:bg-amber-400 text-[#0a0a0f] transition-all font-bold text-lg px-10 h-16 rounded-3xl active:scale-[0.985] shine">
+                            <span>QUERO MEU PACOTE AGORA</span>
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+
+                        <a href="https://wa.me/12678265740" target="_blank"
+                           class="inline-flex items-center justify-center gap-x-3 glass-strong hover:bg-white/10 font-semibold text-lg px-8 h-16 rounded-3xl transition-all active:scale-[0.985]">
+                            <i class="fa-brands fa-whatsapp text-xl text-emerald-400"></i>
+                            <span>Falar no WhatsApp</span>
+                        </a>
+                    </div>
+
+                    <!-- Stats Bar -->
+                    <div class="flex items-center gap-x-8 mt-12 reveal active reveal-delay-4">
+                        <div class="flex -space-x-2">
+                            <div class="w-9 h-9 bg-zinc-800 border-2 border-[#0a0a0f] rounded-full overflow-hidden"><img src="https://picsum.photos/id/1005/36/36" class="object-cover"></div>
+                            <div class="w-9 h-9 bg-zinc-800 border-2 border-[#0a0a0f] rounded-full overflow-hidden"><img src="https://picsum.photos/id/1011/36/36" class="object-cover"></div>
+                            <div class="w-9 h-9 bg-zinc-800 border-2 border-[#0a0a0f] rounded-full overflow-hidden"><img src="https://picsum.photos/id/1009/36/36" class="object-cover"></div>
+                            <div class="w-9 h-9 bg-amber-400 border-2 border-[#0a0a0f] rounded-full flex items-center justify-center text-[10px] font-black text-amber-900">+20</div>
+                        </div>
+                        <div class="text-white/60 text-sm">
+                            <div class="flex items-center gap-x-1 text-amber-400 mb-0.5">
+                                <i class="fa-solid fa-star text-xs"></i>
+                                <i class="fa-solid fa-star text-xs"></i>
+                                <i class="fa-solid fa-star text-xs"></i>
+                                <i class="fa-solid fa-star text-xs"></i>
+                                <i class="fa-solid fa-star text-xs"></i>
+                                <span class="text-white font-bold ml-1">4.8</span>
+                            </div>
+                            <span class="text-white/50">25+ avaliações de clientes satisfeitos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual -->
+                <div class="lg:col-span-5 relative reveal active reveal-delay-3">
+                    <div class="relative rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl aspect-[4/3] lg:aspect-auto lg:h-[520px] glass-strong">
+                        <img src="https://picsum.photos/id/1015/1200/1200"
+                             class="absolute inset-0 w-full h-full object-cover brightness-[0.8]" alt="Mesa de trabalho criativa com laptop, caderno e materiais de design">
+
+                        <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/40 to-black/30"></div>
+
+                        <!-- Floating Badge -->
+                        <div class="absolute top-6 right-6 glass-strong rounded-2xl px-4 py-2 flex items-center gap-x-2">
+                            <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                            <span class="text-xs font-semibold">Disponível agora</span>
+                        </div>
+
+                        <div class="absolute bottom-0 left-0 right-0 p-8">
+                            <div class="glass-strong text-white p-5 rounded-2xl max-w-[280px]">
+                                <div class="flex items-center gap-x-3 mb-3">
+                                    <img src="assets/images/logo.png" alt="Philly Creative" class="w-10 h-10 rounded-xl flex-shrink-0">
+                                    <div class="text-sm leading-tight">
+                                        <div class="font-bold">PHILLY CREATIVE</div>
+                                        <div class="text-[10px] text-white/60">Marketing que converte</div>
+                                    </div>
+                                </div>
+                                <div class="text-xs text-white/70">Design • Gestão de redes • Conteúdo que vende</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-y-1 text-[10px] tracking-[2px] text-white/40">
+            <div>ROLE PARA VER MAIS</div>
+            <i class="fa-solid fa-chevron-down text-xs animate-bounce"></i>
+        </div>
+    </header>
+
+    <!-- O QUE FAZEMOS -->
+    <section id="servicos" class="brochure-section py-24 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <div class="inline-block px-4 py-1.5 rounded-full glass text-xs tracking-[2px] font-semibold mb-4">SERVIÇOS COMPLETOS</div>
+                <h2 class="heading-font text-5xl lg:text-6xl tracking-tighter font-black">O que fazemos?</h2>
+                <p class="mt-4 text-white/60 max-w-md mx-auto">Tudo o que seu negócio precisa para se destacar no digital.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+                <div class="service-item glass rounded-3xl p-7 flex gap-5 reveal">
+                    <i class="fa-solid fa-globe text-3xl text-amber-400 mt-1 w-9 flex-shrink-0"></i>
+                    <div>
+                        <div class="font-semibold text-xl mb-1">Gestão de página social</div>
+                        <div class="text-white/60 text-[15px]">Instagram, Facebook, TikTok e WhatsApp Business com estratégia profissional.</div>
+                    </div>
+                </div>
+
+                <div class="service-item glass rounded-3xl p-7 flex gap-5 reveal reveal-delay-1">
+                    <i class="fa-solid fa-pen-nib text-3xl text-amber-400 mt-1 w-9 flex-shrink-0"></i>
+                    <div>
+                        <div class="font-semibold text-xl mb-1">Criação de conteúdo</div>
+                        <div class="text-white/60 text-[15px]">Posts, Reels, Stories e artes que geram engajamento e vendas.</div>
+                    </div>
+                </div>
+
+                <div class="service-item glass rounded-3xl p-7 flex gap-5 reveal reveal-delay-2">
+                    <i class="fa-solid fa-handshake text-3xl text-amber-400 mt-1 w-9 flex-shrink-0"></i>
+                    <div>
+                        <div class="font-semibold text-xl mb-1">Engajamento de rede</div>
+                        <div class="text-white/60 text-[15px]">Interação ativa com seu público para aumentar alcance e fidelidade.</div>
+                    </div>
+                </div>
+
+                <div class="service-item glass rounded-3xl p-7 flex gap-5 reveal">
+                    <i class="fa-solid fa-tags text-3xl text-amber-400 mt-1 w-9 flex-shrink-0"></i>
+                    <div>
+                        <div class="font-semibold text-xl mb-1">Artes para vendas</div>
+                        <div class="text-white/60 text-[15px]">Promoções, cardápios, combos e materiais que convertem.</div>
+                    </div>
+                </div>
+
+                <div class="service-item glass rounded-3xl p-7 flex gap-5 reveal reveal-delay-1">
+                    <i class="fa-solid fa-id-card text-3xl text-amber-400 mt-1 w-9 flex-shrink-0"></i>
+                    <div>
+                        <div class="font-semibold text-xl mb-1">Cartões de Visita + Logomarca</div>
+                        <div class="text-white/60 text-[15px]">Identidade visual completa e cartões profissionais de alto padrão.</div>
+                    </div>
+                </div>
+
+                <div class="service-item glass rounded-3xl p-7 flex gap-5 reveal reveal-delay-2">
+                    <i class="fa-solid fa-file-lines text-3xl text-amber-400 mt-1 w-9 flex-shrink-0"></i>
+                    <div>
+                        <div class="font-semibold text-xl mb-1">Panfletos / Flyers + Cardápios</div>
+                        <div class="text-white/60 text-[15px]">Materiais impressos e digitais otimizados para conversão.</div>
+                    </div>
+                </div>
+
+                <div class="service-item glass rounded-3xl p-7 flex gap-5 reveal">
+                    <i class="fa-solid fa-laptop-code text-3xl text-amber-400 mt-1 w-9 flex-shrink-0"></i>
+                    <div>
+                        <div class="font-semibold text-xl mb-1">Criação de Website</div>
+                        <div class="text-white/60 text-[15px]">Sites modernos, responsivos e otimizados para SEO e conversão.</div>
+                    </div>
+                </div>
+
+                <div class="service-item glass rounded-3xl p-7 flex gap-5 reveal reveal-delay-1">
+                    <i class="fa-solid fa-qrcode text-3xl text-amber-400 mt-1 w-9 flex-shrink-0"></i>
+                    <div>
+                        <div class="font-semibold text-xl mb-1">Personalizados em geral</div>
+                        <div class="text-white/60 text-[15px]">QR Codes, link tree, materiais sob medida para sua marca.</div>
+                    </div>
+                </div>
+
+                <div class="service-item glass rounded-3xl p-7 flex gap-5 reveal reveal-delay-2">
+                    <i class="fa-solid fa-rocket text-3xl text-amber-400 mt-1 w-9 flex-shrink-0"></i>
+                    <div>
+                        <div class="font-semibold text-xl mb-1">Estratégia completa de marketing</div>
+                        <div class="text-white/60 text-[15px]">Do branding à execução, tudo para fazer seu negócio crescer.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12 text-white/60 text-sm max-w-md mx-auto reveal">
+                Tudo isso e muito mais que o seu negócio precisa para se destacar no digital.
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ARTES DIGITAIS -->
+    <section id="artes" class="brochure-section py-24 bg-zinc-900/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-y-4 reveal">
+                <div>
+                    <div class="text-amber-400 text-xs tracking-[2px] font-bold mb-2">PARA SEU NEGÓCIO</div>
+                    <h2 class="heading-font text-4xl lg:text-5xl tracking-tighter font-black">Artes Digitais que vendem</h2>
+                </div>
+                <p class="text-white/70 max-w-sm">Exemplos reais de artes criadas para delivery, food service e negócios locais.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- Card 1 -->
+                <div class="gallery-card glass rounded-3xl overflow-hidden group reveal">
+                    <div class="h-52 relative bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center p-6 overflow-hidden">
+                        <div class="text-center text-white relative z-10">
+                            <div class="text-xs tracking-widest opacity-75 mb-1">SALGADOS DA CIDADE</div>
+                            <div class="font-black text-4xl leading-none tracking-tighter mb-2">QUALQUER PIZZA<br>POR R$25,00</div>
+                            <div class="inline-block bg-white/90 text-black text-xs px-4 py-1 rounded-full font-bold">A MELHOR PIZZA DA CIDADE</div>
+                        </div>
+                    </div>
+                    <div class="p-5 text-sm flex items-center justify-between">
+                        <div>
+                            <div class="font-semibold">Flyer Promoção</div>
+                            <div class="text-white/50 text-xs">Pizza + Bebida</div>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-white/40 group-hover:text-amber-400 transition-colors"></i>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="gallery-card glass rounded-3xl overflow-hidden group reveal reveal-delay-1">
+                    <div class="h-52 relative bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center p-6">
+                        <div class="text-center text-white">
+                            <div class="flex justify-center mb-3">
+                                <i class="fa-solid fa-glass-cheers text-4xl"></i>
+                            </div>
+                            <div class="font-black text-3xl tracking-tighter">APRECIE<br>SEM MODERAÇÃO</div>
+                            <div class="mt-2 text-sm">1 Coca 591ml + 30 Salgados<br><span class="font-bold text-xl">R$ 25,00</span></div>
+                        </div>
+                    </div>
+                    <div class="p-5 text-sm flex items-center justify-between">
+                        <div>
+                            <div class="font-semibold">Combo Clássico</div>
+                            <div class="text-white/50 text-xs">Entrega inclusa</div>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-white/40 group-hover:text-amber-400 transition-colors"></i>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="gallery-card glass rounded-3xl overflow-hidden group reveal reveal-delay-2">
+                    <div class="h-52 relative bg-[#0a0a0f] flex items-center justify-center p-6 border-b border-white/10">
+                        <div class="text-center">
+                            <div class="text-red-500 text-xs tracking-widest font-bold mb-1">MEGA COMBOS</div>
+                            <div class="font-black text-4xl tracking-[-2.5px] leading-none text-white">SALGADINHOS</div>
+                            <div class="mt-4 grid grid-cols-3 gap-2 text-xs">
+                                <div class="glass rounded-xl p-2">1 Coca + 30 salgados<br><span class="font-bold">R$25</span></div>
+                                <div class="glass rounded-xl p-2">1 Coca + 100 salgados<br><span class="font-bold">R$35</span></div>
+                                <div class="glass rounded-xl p-2">+ entrega<br><span class="font-bold">R$60</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 text-sm flex items-center justify-between">
+                        <div>
+                            <div class="font-semibold">Campanha de Combos</div>
+                            <div class="text-white/50 text-xs">Alta conversão</div>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-white/40 group-hover:text-amber-400 transition-colors"></i>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="gallery-card glass rounded-3xl overflow-hidden group reveal">
+                    <div class="h-52 relative bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center p-8">
+                        <div class="text-center text-white">
+                            <i class="fa-solid fa-motorcycle text-5xl mb-4"></i>
+                            <div class="font-black text-4xl tracking-tighter leading-none">BATEU A FOME?</div>
+                            <div class="mt-3 text-sm">Peça um delivery agora!</div>
+                        </div>
+                    </div>
+                    <div class="p-5 text-sm flex items-center justify-between">
+                        <div>
+                            <div class="font-semibold">Guaraná + Salgados</div>
+                            <div class="text-white/50 text-xs">Campanha de fome</div>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-white/40 group-hover:text-amber-400 transition-colors"></i>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="gallery-card glass rounded-3xl overflow-hidden group reveal reveal-delay-1">
+                    <div class="h-52 bg-zinc-900 flex items-center justify-center p-6 relative">
+                        <div class="w-40 h-72 bg-[#0a0a0f] border border-white/20 rounded-3xl p-3 shadow-inner flex flex-col">
+                            <div class="text-center mb-auto">
+                                <div class="text-amber-400 text-xs">QUICKS</div>
+                                <div class="font-bold text-sm">Cardápio Digital</div>
+                            </div>
+                            <div class="space-y-1 text-xs">
+                                <div class="flex justify-between px-1"><span>Burgers</span><span class="text-white/40">→</span></div>
+                                <div class="flex justify-between px-1"><span>Porções</span><span class="text-white/40">→</span></div>
+                                <div class="flex justify-between px-1"><span>Bebidas</span><span class="text-white/40">→</span></div>
+                            </div>
+                            <div class="mt-auto pt-2 border-t border-white/10 text-center">
+                                <div class="text-[10px] text-emerald-400 font-bold">PEDIR AGORA</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 text-sm flex items-center justify-between">
+                        <div>
+                            <div class="font-semibold">App / Cardápio Digital</div>
+                            <div class="text-white/50 text-xs">UX otimizada para conversão</div>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-white/40 group-hover:text-amber-400 transition-colors"></i>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="gallery-card glass rounded-3xl overflow-hidden group reveal reveal-delay-2">
+                    <div class="h-52 relative bg-gradient-to-br from-yellow-300 via-yellow-400 to-amber-500 flex items-center justify-center p-6">
+                        <div class="text-center text-zinc-950">
+                            <div class="text-xs tracking-[1px] font-bold">TERÇA-FEIRA</div>
+                            <div class="font-black text-5xl tracking-[-2px] leading-none">SALGADOS</div>
+                            <div class="mt-1 text-sm font-semibold">50 salgados + Refri 2L<br><span class="font-black text-2xl">R$ 30,00</span></div>
+                        </div>
+                    </div>
+                    <div class="p-5 text-sm flex items-center justify-between">
+                        <div>
+                            <div class="font-semibold">Promoção de Terça</div>
+                            <div class="text-white/50 text-xs">Alta performance</div>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-white/40 group-hover:text-amber-400 transition-colors"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PERSONALIZADO -->
+    <section id="personalizado" class="brochure-section py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-14 reveal">
+                <div class="text-amber-400 text-xs tracking-[2px] font-bold mb-2">MATERIAIS FÍSICOS E DIGITAIS</div>
+                <h2 class="heading-font text-4xl lg:text-5xl tracking-tighter font-black">Personalizado para o seu negócio</h2>
+                <p class="mt-3 text-white/70 max-w-md mx-auto">Do digital ao impresso. Tudo com a cara da sua marca.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="glass rounded-3xl p-4 text-center card-hover reveal">
+                    <div class="h-40 flex items-center justify-center bg-[#0a0a0f] rounded-2xl mb-4 overflow-hidden">
+                        <div class="text-center px-4">
+                            <div class="font-black text-xl tracking-tighter">PLASTERWORK<br>AND CONSTRUCTION LLC</div>
+                            <div class="text-[10px] mt-3 text-white/60">📞 (614) 284-1152</div>
+                            <div class="mt-4"><span class="px-3 py-px text-[9px] border border-white/30 rounded">QR CODE</span></div>
+                        </div>
+                    </div>
+                    <div class="font-semibold text-sm">Placa de obra / Yard Sign</div>
+                </div>
+
+                <div class="glass rounded-3xl p-4 text-center card-hover reveal reveal-delay-1">
+                    <div class="h-40 flex items-center justify-center bg-[#0a0a0f] rounded-2xl mb-4 overflow-hidden">
+                        <div class="text-center">
+                            <i class="fa-solid fa-book text-6xl text-white/80 mb-2"></i>
+                            <div class="text-xs">Catálogo / Brochura<br>profissional</div>
+                        </div>
+                    </div>
+                    <div class="font-semibold text-sm">Catálogo de Serviços</div>
+                </div>
+
+                <div class="glass rounded-3xl p-4 text-center card-hover reveal reveal-delay-2">
+                    <div class="h-40 flex items-center justify-center bg-gradient-to-br from-rose-100 to-amber-100 rounded-2xl mb-4 overflow-hidden relative">
+                        <div class="text-center text-zinc-800">
+                            <div class="font-serif text-xl">Home & Garden</div>
+                            <div class="text-xs mt-1">Residential • Commercial</div>
+                            <div class="mt-6 text-[10px] border border-zinc-800/30 inline-block px-3 py-px rounded">QR CODE</div>
+                        </div>
+                    </div>
+                    <div class="font-semibold text-sm">Door Hanger Premium</div>
+                </div>
+
+                <div class="glass rounded-3xl p-4 text-center card-hover reveal reveal-delay-3">
+                    <div class="h-40 flex items-center justify-center bg-white rounded-2xl mb-4 overflow-hidden p-3">
+                        <div class="text-center text-zinc-900 w-full">
+                            <div class="font-black text-3xl tracking-tighter">AS</div>
+                            <div class="text-xs">ARQ. SEBASTIAN</div>
+                            <div class="text-[10px] mt-4">📞 (740) 972-0983</div>
+                        </div>
+                    </div>
+                    <div class="font-semibold text-sm">Cartão de Visita</div>
+                </div>
+
+                <div class="glass rounded-3xl p-4 text-center card-hover reveal reveal-delay-4">
+                    <div class="h-40 flex items-center justify-center bg-emerald-900 rounded-2xl mb-4 overflow-hidden relative">
+                        <div class="text-center text-white px-3">
+                            <div class="font-black">MEBRA<br>LANDSCAPING</div>
+                            <div class="text-[10px] mt-1 opacity-75">📍 Columbus, OH</div>
+                            <div class="mt-4"><span class="text-xs px-2 py-0.5 bg-white/20 rounded">SCAN ME</span></div>
+                        </div>
+                    </div>
+                    <div class="font-semibold text-sm">Door Hanger com QR</div>
+                </div>
+
+                <div class="glass rounded-3xl p-4 text-center card-hover reveal reveal-delay-5">
+                    <div class="h-40 flex items-center justify-center bg-white rounded-2xl mb-4 overflow-hidden">
+                        <div class="text-center">
+                            <div class="font-black text-4xl text-zinc-900 tracking-tighter">N&K</div>
+                            <div class="text-xs text-zinc-600">CLEANING SERVICES</div>
+                            <div class="mt-3 text-emerald-600 text-xs font-bold">📞 (380) 555-0192</div>
+                        </div>
+                    </div>
+                    <div class="font-semibold text-sm">Ímã de Carro / Car Magnet</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PERSONALIZAÇÕES -->
+    <section class="brochure-section py-16 bg-zinc-900/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-10 reveal">
+                <div class="text-amber-400 text-xs tracking-[2px] font-bold mb-2">BRANDING COMPLETO</div>
+                <h2 class="heading-font text-4xl lg:text-5xl tracking-tighter font-black">Personalizações que marcam presença</h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div class="glass rounded-3xl overflow-hidden reveal">
+                    <div class="h-40 bg-zinc-800 flex items-center justify-center p-5">
+                        <div class="text-center">
+                            <i class="fa-solid fa-car text-6xl text-white/70 mb-3"></i>
+                            <div class="font-bold">Envelopamento<br>de Veículo</div>
+                        </div>
+                    </div>
+                    <div class="p-4 text-sm">Carro da empresa com identidade visual completa</div>
+                </div>
+
+                <div class="glass rounded-3xl overflow-hidden reveal reveal-delay-1">
+                    <div class="h-40 bg-zinc-800 flex items-center justify-center p-5">
+                        <div class="text-center">
+                            <i class="fa-solid fa-motorcycle text-6xl text-white/70 mb-3"></i>
+                            <div class="font-bold">Envelopamento<br>de Moto</div>
+                        </div>
+                    </div>
+                    <div class="p-4 text-sm">Design impactante para delivery e visibilidade</div>
+                </div>
+
+                <div class="glass rounded-3xl overflow-hidden reveal reveal-delay-2">
+                    <div class="h-40 bg-zinc-800 flex items-center justify-center p-5">
+                        <div class="text-center">
+                            <i class="fa-solid fa-mug-hot text-6xl text-white/70 mb-3"></i>
+                            <div class="font-bold">Canecas<br>Personalizadas</div>
+                        </div>
+                    </div>
+                    <div class="p-4 text-sm">"YOUR DESIGN HERE" — brindes corporativos</div>
+                </div>
+
+                <div class="glass rounded-3xl overflow-hidden reveal reveal-delay-3">
+                    <div class="h-40 bg-zinc-800 flex items-center justify-center p-5">
+                        <div class="text-center">
+                            <i class="fa-solid fa-wine-glass text-6xl text-white/70 mb-3"></i>
+                            <div class="font-bold">Taças & Copos<br>Personalizados</div>
+                        </div>
+                    </div>
+                    <div class="p-4 text-sm">Gravação a laser para eventos e casamentos</div>
+                </div>
+
+                <div class="glass rounded-3xl overflow-hidden reveal reveal-delay-4 lg:col-span-1 md:col-span-3 col-span-2">
+                    <div class="h-40 bg-[#0a0a0f] flex items-center justify-center p-5 border-b border-white/10">
+                        <div class="flex gap-3">
+                            <div class="w-20 h-36 bg-zinc-900 border border-white/20 rounded-3xl p-2 text-xs">
+                                <div class="text-center text-amber-400 text-[9px]">QUICKS</div>
+                                <div class="text-center font-bold text-xs mt-1">Cardápio</div>
+                            </div>
+                            <div class="w-20 h-36 bg-zinc-900 border border-white/20 rounded-3xl p-2 text-xs">
+                                <div class="text-center text-emerald-400 text-[9px]">APP</div>
+                                <div class="text-center font-bold text-xs mt-1">Mobile First</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 text-sm">Mockups de App e Interfaces Digitais</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <section class="py-16 relative overflow-hidden">
+        <div class="orb orb-1" style="opacity: 0.08;"></div>
+        <div class="max-w-5xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="reveal">
+                    <div class="stat-number heading-font text-5xl font-black gradient-text" data-target="20">0</div>
+                    <div class="text-white/60 text-sm mt-2">Clientes atendidos</div>
+                </div>
+                <div class="reveal reveal-delay-1">
+                    <div class="stat-number heading-font text-5xl font-black gradient-text" data-target="150">0</div>
+                    <div class="text-white/60 text-sm mt-2">Artes criadas</div>
+                </div>
+                <div class="reveal reveal-delay-2">
+                    <div class="stat-number heading-font text-5xl font-black gradient-text" data-target="4" data-suffix=".8">0</div>
+                    <div class="text-white/60 text-sm mt-2">Avaliação média</div>
+                </div>
+                <div class="reveal reveal-delay-3">
+                    <div class="stat-number heading-font text-5xl font-black gradient-text" data-target="100" data-suffix="%">0</div>
+                    <div class="text-white/60 text-sm mt-2">Clientes satisfeitos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUMENTE SUA PRESENÇA -->
+    <section class="brochure-section py-24 bg-zinc-900/50">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <div class="max-w-2xl mx-auto reveal">
+                <h2 class="heading-font text-5xl lg:text-6xl tracking-tighter font-black mb-6">Aumente sua <span class="gradient-text">presença.</span></h2>
+                <p class="text-2xl text-white/80">Quem não é visto não é lembrado!!</p>
+
+                <div class="my-10 text-left glass-strong rounded-3xl p-9">
+                    <p class="text-xl">Já imaginou chegar nas suas redes sociais e ver seus seguidores e curtidas aumentando?</p>
+                    <p class="mt-4 text-white/70">Tudo isso pelo fato de você ter um perfil mais profissional.</p>
+                </div>
+
+                <div class="inline-flex items-center gap-x-2 text-sm glass px-5 h-12 rounded-3xl">
+                    <i class="fa-solid fa-chart-line text-emerald-400"></i>
+                    <span class="font-semibold">Perfil profissional = Mais clientes e autoridade</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLIENTES -->
+    <section id="clientes" class="brochure-section py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-12 gap-y-4 reveal">
+                <div>
+                    <div class="text-amber-400 text-xs tracking-[2px] font-bold mb-2">OPINIÃO DE QUEM MAIS IMPORTA</div>
+                    <h2 class="heading-font text-4xl lg:text-5xl tracking-tighter font-black">Alguns de nossos clientes</h2>
+                </div>
+                <div class="flex items-center gap-x-3 glass rounded-2xl px-5 py-3">
+                    <div class="flex text-amber-400">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div>
+                        <span class="font-black text-2xl">4.8</span>
+                        <span class="text-white/60">(25 avaliações)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
+                <div class="testimonial-card glass p-7 rounded-3xl reveal">
+                    <div class="flex gap-x-4 items-start">
+                        <div class="w-12 h-12 bg-yellow-400 rounded-2xl flex-shrink-0 flex items-center justify-center text-yellow-900 font-black text-xl">K</div>
+                        <div class="flex-1 min-w-0">
+                            <div class="font-bold">King Food</div>
+                            <div class="text-xs text-white/50 mb-3">Columbus, OH</div>
+                            <p class="text-sm text-white/80">"Meu perfil se tornou mais profissional e as vendas aumentaram muito obrigado por ter nos ajudado."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card glass p-7 rounded-3xl reveal reveal-delay-1">
+                    <div class="flex gap-x-4 items-start">
+                        <div class="w-12 h-12 bg-white rounded-2xl flex-shrink-0 flex items-center justify-center text-zinc-900 font-black text-xl">V</div>
+                        <div class="flex-1 min-w-0">
+                            <div class="font-bold">Vipiana Cleaning</div>
+                            <div class="text-xs text-white/50 mb-3">Columbus, OH</div>
+                            <p class="text-sm text-white/80">"Me ajudou muito ter uma logomarca personalizada, pude fazer meus uniformes por ter nos ajudado."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card glass p-7 rounded-3xl reveal reveal-delay-2">
+                    <div class="flex gap-x-4 items-start">
+                        <div class="w-12 h-12 bg-red-500 rounded-2xl flex-shrink-0 flex items-center justify-center text-white font-black text-xl">B</div>
+                        <div class="flex-1 min-w-0">
+                            <div class="font-bold">Barbearia 7</div>
+                            <div class="text-xs text-white/50 mb-3">Columbus, OH</div>
+                            <p class="text-sm text-white/80">"Muito obrigado, eu estou muito satisfeito com seu trabalho, feito com muita dedicação."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Logo Marquee -->
+            <div class="text-center mb-6 reveal">
+                <div class="text-xs tracking-widest text-white/50 font-semibold">CONFIAM EM NÓS</div>
+            </div>
+
+            <div class="marquee reveal">
+                <div class="marquee-track">
+                    <span class="inline-flex items-center gap-x-12 px-6">
+                        <span class="font-black text-xl tracking-tighter logo-grid-item">NEXT TRIM</span>
+                        <span class="text-sm logo-grid-item">King Food</span>
+                        <span class="text-sm logo-grid-item">Vipiana</span>
+                        <span class="text-sm logo-grid-item">Barbearia 7</span>
+                        <span class="text-sm logo-grid-item">Warly Cleaning</span>
+                        <span class="text-sm logo-grid-item">JMV Services</span>
+                        <span class="text-sm logo-grid-item">Edimara</span>
+                        <span class="text-sm logo-grid-item">Temperinho Mineiro</span>
+                        <span class="text-sm logo-grid-item">Mebra Landscaping</span>
+                        <span class="text-sm logo-grid-item">Ramos Cleaning</span>
+                        <span class="text-sm logo-grid-item">Maximum Painting</span>
+                        <span class="text-sm logo-grid-item">Belo Home</span>
+                        <span class="text-sm logo-grid-item">Lorraine's</span>
+                        <span class="text-sm logo-grid-item">AC Cleaning</span>
+                        <span class="text-sm logo-grid-item">Crystal DSG</span>
+                        <span class="text-sm logo-grid-item">Perfect Cleaning</span>
+                        <span class="text-sm logo-grid-item">Rust Handyman</span>
+                        <span class="text-sm logo-grid-item">Fogão</span>
+                        <span class="text-sm logo-grid-item">JW Services</span>
+                        <span class="text-sm logo-grid-item">GI Cleaning</span>
+                    </span>
+                    <span class="inline-flex items-center gap-x-12 px-6">
+                        <span class="font-black text-xl tracking-tighter logo-grid-item">NEXT TRIM</span>
+                        <span class="text-sm logo-grid-item">King Food</span>
+                        <span class="text-sm logo-grid-item">Vipiana</span>
+                        <span class="text-sm logo-grid-item">Barbearia 7</span>
+                        <span class="text-sm logo-grid-item">Warly Cleaning</span>
+                        <span class="text-sm logo-grid-item">JMV Services</span>
+                        <span class="text-sm logo-grid-item">Edimara</span>
+                        <span class="text-sm logo-grid-item">Temperinho Mineiro</span>
+                        <span class="text-sm logo-grid-item">Mebra Landscaping</span>
+                        <span class="text-sm logo-grid-item">Ramos Cleaning</span>
+                        <span class="text-sm logo-grid-item">Maximum Painting</span>
+                        <span class="text-sm logo-grid-item">Belo Home</span>
+                        <span class="text-sm logo-grid-item">Lorraine's</span>
+                        <span class="text-sm logo-grid-item">AC Cleaning</span>
+                        <span class="text-sm logo-grid-item">Crystal DSG</span>
+                        <span class="text-sm logo-grid-item">Perfect Cleaning</span>
+                        <span class="text-sm logo-grid-item">Rust Handyman</span>
+                        <span class="text-sm logo-grid-item">Fogão</span>
+                        <span class="text-sm logo-grid-item">JW Services</span>
+                        <span class="text-sm logo-grid-item">GI Cleaning</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O QUE OFERECEMOS -->
+    <section class="brochure-section py-24 bg-zinc-900/50">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="heading-font text-4xl lg:text-5xl tracking-tighter font-black mb-6 reveal">O que oferecemos para você?</h2>
+
+            <div class="space-y-8 text-left max-w-2xl mx-auto mt-10">
+                <div class="reveal">
+                    <div class="font-bold text-xl mb-2">Você sempre quis ter uma página de sucesso?</div>
+                    <p class="text-white/70">Podemos te ajudar! Criamos conteúdos com artes atrativas e chamativas que cativam e fazem sua página se tornar profissional.</p>
+                </div>
+
+                <div class="reveal reveal-delay-1">
+                    <div class="font-bold text-xl mb-2">Como tudo isso pode me ajudar?</div>
+                    <p class="text-white/70">Já ouviu aquele ditado: "A primeira impressão é a que fica"? Pois bem, seus seguidores e futuros clientes gostam de ver que você trabalha de forma profissional. Se você cuida bem da aparência da sua página, você já está um passo para o sucesso.</p>
+                </div>
+
+                <div class="pt-6 border-t border-white/10 reveal reveal-delay-2">
+                    <div class="font-bold text-xl mb-2 text-amber-400">Um passo para o sucesso!</div>
+                    <p class="text-white/70">Agora que você já sabe o que tem que ser feito, é hora de você conferir como podemos te ajudar...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PACOTES -->
+    <section id="pacotes" class="brochure-section py-24 bg-zinc-900/50 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-14 reveal">
+                <div class="text-amber-400 text-xs tracking-[2px] font-bold mb-2">ESCOLHA SEU PLANO</div>
+                <h2 class="heading-font text-5xl lg:text-6xl tracking-tighter font-black">Nossos Pacotes</h2>
+                <p class="mt-3 text-white/70">Pacotes de marketing digital acessíveis e personalizáveis.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+
+                <!-- STANDARD -->
+                <div class="package-card glass rounded-3xl p-8 flex flex-col h-full reveal">
+                    <div>
+                        <div class="font-black text-3xl tracking-tighter">Standard</div>
+                        <div class="text-white/60 mt-1 text-sm">Ideal para começar</div>
+                    </div>
+
+                    <div class="my-8 space-y-4 flex-1">
+                        <div class="flex justify-between items-baseline border-b border-white/10 pb-3">
+                            <div>5 artes visuais</div>
+                            <div class="font-bold text-xl">$40</div>
+                        </div>
+                        <div class="flex justify-between items-baseline border-b border-white/10 pb-3">
+                            <div>5 Vídeos com engajamentos</div>
+                            <div class="font-bold text-xl">$55</div>
+                        </div>
+                        <div class="flex justify-between items-baseline">
+                            <div>Estratégia de vendas para aumentar seguidores</div>
+                            <div class="font-bold text-xl">$55</div>
+                        </div>
+                    </div>
+
+                    <a href="#contato"
+                       class="mt-auto block text-center bg-white/10 hover:bg-white hover:text-[#0a0a0f] transition-all font-bold py-4 rounded-2xl text-sm tracking-wider shine">
+                        QUERO AUMENTAR MEUS CLIENTES!
+                    </a>
+                </div>
+
+                <!-- SOLUTION -->
+                <div class="package-card glass rounded-3xl p-8 flex flex-col h-full relative reveal reveal-delay-1">
+                    <div class="absolute -top-3 right-6 bg-blue-500 text-white text-xs font-bold px-4 py-1 rounded-full flex items-center gap-x-1">
+                        <i class="fa-solid fa-rocket text-xs"></i>
+                        <span>MAIS ESCOLHIDO</span>
+                    </div>
+
+                    <div>
+                        <div class="font-black text-3xl tracking-tighter">Solution</div>
+                        <div class="text-white/60 mt-1 text-sm">Setup completo da sua presença digital</div>
+                    </div>
+
+                    <div class="my-8 space-y-[13px] flex-1 text-sm">
+                        <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-400 w-4"></i> <span>Logomarca da empresa</span></div>
+                        <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-400 w-4"></i> <span>Criação do Instagram profissional</span></div>
+                        <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-400 w-4"></i> <span>Criação de email corporativo</span></div>
+                        <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-400 w-4"></i> <span>Criação de página no Facebook</span></div>
+                        <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-400 w-4"></i> <span>Link tree (redirecionamento)</span></div>
+                        <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-400 w-4"></i> <span>Código QR para cardápio</span></div>
+                        <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-400 w-4"></i> <span>5 Artes visuais</span></div>
+                        <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-400 w-4"></i> <span>Gestão de marca/engajamento por 5 dias</span></div>
+                    </div>
+
+                    <a href="#contato"
+                       class="mt-auto block text-center bg-blue-600 hover:bg-blue-500 transition-all font-bold py-4 rounded-2xl text-sm tracking-wider shine">
+                        COMEÇAR COM O PÉ DIREITO!
+                    </a>
+                </div>
+
+                <!-- PREMIUM -->
+                <div class="package-card popular glass rounded-3xl p-8 flex flex-col h-full relative reveal reveal-delay-2">
+                    <div class="absolute -top-3 right-6 bg-amber-400 text-zinc-950 text-xs font-black px-4 py-1 rounded-full flex items-center gap-x-1">
+                        <span>RECOMENDADO</span>
+                    </div>
+
+                    <div>
+                        <div class="font-black text-3xl tracking-tighter">Premium Mensal</div>
+                        <div class="text-white/60 mt-1 text-sm">Gestão contínua e resultados constantes</div>
+                    </div>
+
+                    <div class="my-8 space-y-[13px] flex-1 text-sm">
+                        <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-400 w-4"></i> <span>10 Artes visuais por mês</span></div>
+                        <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-400 w-4"></i> <span>10 vídeos para Feeds</span></div>
+                        <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-400 w-4"></i> <span>Monitoramento da página no Instagram/Facebook</span></div>
+                        <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-400 w-4"></i> <span>Postagens nas redes sociais</span></div>
+                        <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-400 w-4"></i> <span>Engajamento com stories e comentários</span></div>
+                        <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-400 w-4"></i> <span>Relatórios de performance</span></div>
+                    </div>
+
+                    <a href="#contato"
+                       class="mt-auto block text-center bg-gradient-to-r from-amber-400 to-yellow-500 text-zinc-950 font-black py-4 rounded-2xl text-sm tracking-wider hover:brightness-105 transition-all shine">
+                        QUERO ME DESTACAR DA MULTIDÃO!
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center mt-8 text-xs text-white/50 reveal">Todos os pacotes podem ser personalizados. Fale conosco para montar o plano ideal para o seu negócio.</div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="brochure-section py-24 border-t border-white/5 relative overflow-hidden">
+        <div class="orb orb-2" style="opacity: 0.06;"></div>
+        <div class="max-w-5xl mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-x-16 gap-y-12 items-center">
+
+                <div class="reveal">
+                    <div class="inline-block px-4 py-1.5 rounded-3xl glass text-xs tracking-widest font-semibold mb-4">PRONTO PARA CRESCER?</div>
+
+                    <h2 class="heading-font text-5xl lg:text-6xl tracking-tighter font-black leading-none">Venha se juntar a nós!</h2>
+
+                    <div class="mt-8 space-y-6 text-lg">
+                        <div>
+                            <div class="text-white/60 text-sm tracking-wider">ESTAMOS LOCALIZADOS EM</div>
+                            <div class="font-semibold text-2xl">Columbus, Ohio</div>
+                        </div>
+
+                        <div>
+                            <div class="text-white/60 text-sm tracking-wider">ATENDEMOS</div>
+                            <div class="font-semibold text-2xl">Em todo o País • Brasil & Estados Unidos</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10 flex flex-wrap gap-4">
+                        <a href="https://wa.me/12678265740" target="_blank"
+                           class="flex-1 sm:flex-none inline-flex items-center justify-center gap-x-3 bg-emerald-600 hover:bg-emerald-500 transition-all font-bold px-8 h-14 rounded-2xl shine">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            <span>WhatsApp</span>
+                        </a>
+
+                        <a href="tel:+18312083961"
+                           class="flex-1 sm:flex-none inline-flex items-center justify-center gap-x-3 bg-blue-600 hover:bg-blue-500 transition-all font-bold px-8 h-14 rounded-2xl shine">
+                            <i class="fa-solid fa-phone text-xl"></i>
+                            <span>Ligar Agora</span>
+                        </a>
+
+                        <a href="https://www.instagram.com/phillycreative.design" target="_blank"
+                           class="flex-1 sm:flex-none inline-flex items-center justify-center gap-x-3 glass hover:bg-white/10 transition-all font-semibold px-8 h-14 rounded-2xl">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                            <span>Instagram</span>
+                        </a>
+
+                        <a href="mailto:contato@phillycreative.com"
+                           class="flex-1 sm:flex-none inline-flex items-center justify-center gap-x-3 glass hover:bg-white/10 transition-all font-semibold px-8 h-14 rounded-2xl">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>Email</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="glass-strong rounded-3xl p-8 lg:p-10 reveal reveal-delay-1">
+                    <div class="font-bold text-2xl tracking-tight mb-6">Vamos conversar sobre o seu projeto</div>
+
+                    <form id="contact-form" class="space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="text-xs text-white/60 block mb-1.5">NOME COMPLETO</label>
+                                <input id="form-name" type="text" class="form-input w-full bg-[#0a0a0f] border border-white/20 rounded-2xl px-5 h-12 text-sm outline-none" placeholder="Seu nome" required>
+                            </div>
+                            <div>
+                                <label class="text-xs text-white/60 block mb-1.5">TELEFONE / WHATSAPP</label>
+                                <input id="form-phone" type="tel" class="form-input w-full bg-[#0a0a0f] border border-white/20 rounded-2xl px-5 h-12 text-sm outline-none" placeholder="(614) 555-0192" required>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="text-xs text-white/60 block mb-1.5">NOME DO SEU NEGÓCIO</label>
+                            <input id="form-business" type="text" class="form-input w-full bg-[#0a0a0f] border border-white/20 rounded-2xl px-5 h-12 text-sm outline-none" placeholder="Ex: Next Trim Carpentry" required>
+                        </div>
+
+                        <div>
+                            <label class="text-xs text-white/60 block mb-1.5">O QUE VOCÊ PRECISA?</label>
+                            <select id="form-service" class="form-input w-full bg-[#0a0a0f] border border-white/20 rounded-2xl px-5 h-12 text-sm outline-none">
+                                <option>Pacote Standard</option>
+                                <option>Pacote Solution</option>
+                                <option>Pacote Premium Mensal</option>
+                                <option>Logomarca + Identidade Visual</option>
+                                <option>Gestão de Redes Sociais</option>
+                                <option>Site / Landing Page</option>
+                                <option>Outro (vou descrever abaixo)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="text-xs text-white/60 block mb-1.5">MENSAGEM / DETALHES</label>
+                            <textarea id="form-message" rows="3" class="form-input w-full bg-[#0a0a0f] border border-white/20 rounded-3xl px-5 py-4 text-sm outline-none resize-y min-h-[90px]" placeholder="Conte mais sobre seu negócio e objetivos..."></textarea>
+                        </div>
+
+                        <button type="submit"
+                                class="w-full bg-white hover:bg-amber-400 hover:text-white transition-all text-[#0a0a0f] font-black tracking-wider py-4 rounded-2xl text-sm active:scale-[0.985] shine">
+                            ENVIAR MENSAGEM E COMEÇAR AGORA
+                        </button>
+
+                        <div class="text-center text-[10px] text-white/40">Respondemos em até 2 horas úteis</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6 text-center text-xs text-white/50">
+            <div class="flex justify-center mb-4">
+                <div class="flex items-center gap-x-2">
+                    <img src="assets/images/logo.png" alt="Philly Creative" class="w-8 h-8 rounded-xl">
+                    <span class="font-semibold text-white tracking-tighter">PHILLY CREATIVE</span>
+                </div>
+            </div>
+
+            <div>© 2025 Philly Creative. Todos os direitos reservados.</div>
+            <div class="mt-1">Columbus, Ohio • Atendendo Brasil e Estados Unidos</div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/12678265740" target="_blank" class="float-wa" aria-label="Falar no WhatsApp">
+        <i class="fa-brands fa-whatsapp text-3xl text-white"></i>
+    </a>
+
+    <!-- MOBILE STICKY CTA -->
+    <div class="mobile-cta-bar glass-strong border-t border-white/10 px-4 py-3 flex gap-3">
+        <a href="https://wa.me/12678265740" target="_blank"
+           class="flex-1 inline-flex items-center justify-center gap-x-2 bg-emerald-600 font-bold text-sm py-3 rounded-2xl">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            WhatsApp
+        </a>
+        <a href="#pacotes"
+           class="flex-1 inline-flex items-center justify-center gap-x-2 bg-white text-[#0a0a0f] font-bold text-sm py-3 rounded-2xl">
+            Ver Pacotes
+        </a>
+    </div>
+
+    <script>
+        // === SCROLL PROGRESS BAR ===
+        function initScrollProgress() {
+            const bar = document.getElementById('scroll-progress');
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollTop / docHeight) * 100;
+                bar.style.width = scrollPercent + '%';
+            }, { passive: true });
+        }
+
+        // === NAVBAR SCROLL ===
+        function initNavbar() {
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('nav-scrolled');
+                } else {
+                    navbar.classList.remove('nav-scrolled');
+                }
+            }, { passive: true });
+        }
+
+        // === MOBILE MENU ===
+        function initMobileMenu() {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                const icon = btn.querySelector('i');
+                if (menu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                }
+            });
+
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    const icon = btn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+        }
+
+        // === SMOOTH SCROLL ===
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        const offset = 80;
+                        const bodyRect = document.body.getBoundingClientRect().top;
+                        const elementPosition = target.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition - bodyRect - offset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // === SCROLL REVEAL (Intersection Observer) ===
+        function initScrollReveal() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }
+
+        // === ANIMATED COUNTERS ===
+        function initCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = parseInt(el.dataset.target);
+                        const suffix = el.dataset.suffix || '';
+                        let current = 0;
+                        const increment = target / 40;
+                        const update = () => {
+                            current += increment;
+                            if (current < target) {
+                                el.textContent = Math.floor(current) + suffix;
+                                requestAnimationFrame(update);
+                            } else {
+                                el.textContent = target + suffix;
+                            }
+                        };
+                        update();
+                        observer.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(c => observer.observe(c));
+        }
+
+        // === 3D CARD TILT ===
+        function initTiltCards() {
+            document.querySelectorAll('.tilt-card').forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = (y - centerY) / 20;
+                    const rotateY = (centerX - x) / 20;
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+                });
+            });
+        }
+
+        // === CONTACT FORM → WhatsApp ===
+        function initContactForm() {
+            const form = document.getElementById('contact-form');
+            const WHATSAPP_NUMBER = '12678265740';
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const name = document.getElementById('form-name').value.trim();
+                const phone = document.getElementById('form-phone').value.trim();
+                const business = document.getElementById('form-business').value.trim();
+                const service = document.getElementById('form-service').value;
+                const message = document.getElementById('form-message').value.trim();
+
+                const btn = form.querySelector('button[type="submit"]');
+                const originalText = btn.innerHTML;
+
+                btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> ENVIANDO...';
+                btn.disabled = true;
+
+                let waMessage = '*NOVO CONTATO — Philly Creative*\n\n';
+                waMessage += '*Nome:* ' + name + '\n';
+                waMessage += '*Telefone/WhatsApp:* ' + phone + '\n';
+                waMessage += '*Negócio:* ' + business + '\n';
+                waMessage += '*Serviço de interesse:* ' + service + '\n';
+                if (message) {
+                    waMessage += '*Mensagem:* ' + message + '\n';
+                }
+                waMessage += '\n_Enviado pelo site Philly Creative_';
+
+                const waUrl = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(waMessage);
+
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="fa-solid fa-check mr-2"></i> ABRINDO WHATSAPP...';
+                    btn.classList.add('bg-emerald-500');
+
+                    window.open(waUrl, '_blank');
+
+                    setTimeout(() => {
+                        form.reset();
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                        btn.classList.remove('bg-emerald-500');
+                        showToast();
+                    }, 1800);
+                }, 800);
+            });
+        }
+
+        // === TOAST ===
+        function showToast() {
+            const toast = document.createElement('div');
+            toast.className = 'fixed bottom-6 right-6 glass-strong text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-x-3 z-[100]';
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateY(20px)';
+            toast.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+            toast.innerHTML = `
+                <i class="fa-solid fa-check-circle text-emerald-400 text-xl"></i>
+                <div>
+                    <div class="font-semibold">Recebemos sua mensagem!</div>
+                    <div class="text-xs text-white/60">Nossa equipe responderá em breve via WhatsApp.</div>
+                </div>
+            `;
+            document.body.appendChild(toast);
+
+            requestAnimationFrame(() => {
+                toast.style.opacity = '1';
+                toast.style.transform = 'translateY(0)';
+            });
+
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(20px)';
+                setTimeout(() => toast.remove(), 400);
+            }, 4200);
+        }
+
+        // === KEYBOARD SHORTCUTS ===
+        function initKeyboardShortcuts() {
+            document.addEventListener('keydown', function(e) {
+                if (e.key.toLowerCase() === 'p' && document.activeElement.tagName === 'BODY') {
+                    const packages = document.getElementById('pacotes');
+                    if (packages) {
+                        packages.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        }
+
+        // === INIT ===
+        window.addEventListener('load', () => {
+            initScrollProgress();
+            initNavbar();
+            initMobileMenu();
+            initSmoothScroll();
+            initScrollReveal();
+            initCounters();
+            initTiltCards();
+            initContactForm();
+            initKeyboardShortcuts();
+
+            console.log('%c[Philly Creative v2] Website inicializado com sucesso. UX premium ativo.', 'color:#f59e0b');
+        });
+    </script>
+</body>
+</html>
