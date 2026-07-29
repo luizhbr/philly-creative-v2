@@ -252,6 +252,15 @@
             max-width: 100%;
             object-fit: contain;
         }
+        
+        /* Logos claras - escurecer para visibilidade no fundo branco */
+        .client-logo[src*="viviana-house-cleaner"],
+        .client-logo[src*="cleaning-universe"],
+        .client-logo[src*="warly-cleaning"],
+        .client-logo[src*="mebra-landscaping"],
+        .client-logo[src*="home-garden-services"] {
+            filter: brightness(0.7) contrast(1.2);
+        }
 
         /* === FORM === */
         .form-input {
