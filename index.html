@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Philly Creative • Gestão de Marketing Digital | Columbus, Ohio</title>
     <meta name="description" content="Vamos pro digital. Pacotes de gestão de marketing, criação de conteúdo, logomarcas, sites e artes profissionais para o seu negócio. Atendemos todo o Brasil e Estados Unidos.">
-    <meta name="theme-color" content="#0a0a0f">
+    <meta name="theme-color" content="#E2DDCF">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Philly Creative">
@@ -14,26 +14,30 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 
         :root {
-            --primary: #0a0a0f;
-            --accent: #f59e0b;
-            --accent-glow: rgba(245, 158, 11, 0.4);
-            --glass: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
+            --primary: #221D25;
+            --cream: #E2DDCF;
+            --accent: #D5E91E;
+            --accent-glow: rgba(213, 233, 30, 0.4);
+            --purple: #855BD2;
+            --green: #2FBE55;
+            --glass: rgba(34, 29, 37, 0.05);
+            --glass-border: rgba(34, 29, 37, 0.12);
         }
 
         * { -webkit-font-smoothing: antialiased; }
 
         body {
             font-family: 'Inter', system-ui, sans-serif;
-            background-color: var(--primary);
+            background-color: var(--cream);
+            color: var(--primary);
         }
 
         .heading-font {
-            font-family: 'Poppins', 'Inter', system-ui, sans-serif;
-            font-weight: 800;
+            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+            font-weight: 700;
             letter-spacing: -0.03em;
         }
 
@@ -43,7 +47,7 @@
             top: 0;
             left: 0;
             height: 3px;
-            background: linear-gradient(90deg, #f59e0b, #fbbf24, #f59e0b);
+            background: linear-gradient(90deg, #D5E91E, #855BD2, #D5E91E);
             z-index: 100;
             width: 0%;
             transition: width 0.1s ease;
@@ -59,9 +63,9 @@
             pointer-events: none;
             animation: float 20s ease-in-out infinite;
         }
-        .orb-1 { width: 400px; height: 400px; background: #f59e0b; top: -100px; right: -100px; animation-delay: 0s; }
-        .orb-2 { width: 300px; height: 300px; background: #3b82f6; bottom: -50px; left: -50px; animation-delay: 5s; }
-        .orb-3 { width: 250px; height: 250px; background: #8b5cf6; top: 40%; left: 50%; animation-delay: 10s; }
+        .orb-1 { width: 400px; height: 400px; background: #D5E91E; top: -100px; right: -100px; animation-delay: 0s; }
+        .orb-2 { width: 300px; height: 300px; background: #855BD2; bottom: -50px; left: -50px; animation-delay: 5s; }
+        .orb-3 { width: 250px; height: 250px; background: #2FBE55; top: 40%; left: 50%; animation-delay: 10s; }
 
         @keyframes float {
             0%, 100% { transform: translate(0, 0) scale(1); }
@@ -79,18 +83,18 @@
         }
 
         .glass-strong {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(34, 29, 37, 0.08);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(34, 29, 37, 0.15);
         }
 
         /* === NAVBAR === */
         .nav-scrolled {
-            background-color: rgba(10, 10, 15, 0.85);
+            background-color: rgba(226, 221, 207, 0.9);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-bottom-color: rgba(255, 255, 255, 0.08);
+            border-bottom-color: rgba(34, 29, 37, 0.08);
         }
 
         /* === SCROLL REVEAL === */
@@ -122,8 +126,8 @@
         }
         .card-hover:hover {
             transform: translateY(-6px);
-            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 30px rgba(245, 158, 11, 0.08);
-            border-color: rgba(245, 158, 11, 0.2);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 30px rgba(213, 233, 30, 0.15);
+            border-color: rgba(213, 233, 30, 0.3);
         }
 
         /* === GALLERY === */
@@ -150,11 +154,11 @@
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
         .package-card.popular {
-            border: 2px solid #f59e0b;
-            box-shadow: 0 0 40px rgba(245, 158, 11, 0.12);
+            border: 2px solid #D5E91E;
+            box-shadow: 0 0 40px rgba(213, 233, 30, 0.15);
         }
         .package-card.popular:hover {
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 50px rgba(245, 158, 11, 0.2);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 50px rgba(213, 233, 30, 0.2);
         }
 
         /* === SERVICE ITEMS === */
@@ -162,12 +166,12 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .service-item:hover {
-            background-color: rgba(255, 255, 255, 0.04);
+            background-color: rgba(34, 29, 37, 0.04);
             transform: translateX(6px);
-            border-color: rgba(245, 158, 11, 0.2);
+            border-color: rgba(213, 233, 30, 0.3);
         }
         .service-item:hover i {
-            color: #fbbf24;
+            color: #D5E91E;
             transform: scale(1.1);
         }
         .service-item i {
@@ -176,7 +180,7 @@
 
         /* === GRADIENT TEXT === */
         .gradient-text {
-            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #f59e0b 100%);
+            background: linear-gradient(135deg, #D5E91E 0%, #855BD2 50%, #D5E91E 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -194,7 +198,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 50%);
+            background: radial-gradient(circle, rgba(213, 233, 30, 0.2) 0%, transparent 50%);
             opacity: 0;
             transition: opacity 0.4s ease;
         }
@@ -268,13 +272,13 @@
             transition: all 0.3s ease;
         }
         .form-input:focus {
-            border-color: rgba(245, 158, 11, 0.5);
-            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+            border-color: rgba(213, 233, 30, 0.6);
+            box-shadow: 0 0 0 3px rgba(213, 233, 30, 0.15);
         }
 
         /* === BADGE === */
         .marketing-badge {
-            background: linear-gradient(135deg, #f59e0b, #d97706);
+            background: linear-gradient(135deg, #D5E91E, #855BD2);
             color: white;
             font-size: 0.75rem;
             padding: 2px 10px;
@@ -312,7 +316,7 @@
             left: -100%;
             width: 50%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(34, 29, 37, 0.1), transparent);
             transition: left 0.6s ease;
         }
         .shine:hover::after {
@@ -334,7 +338,7 @@
         /* === SECTION DIVIDERS === */
         .section-divider {
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(34, 29, 37, 0.1), transparent);
         }
 
         /* === TESTIMONIAL === */
@@ -343,7 +347,7 @@
         }
         .testimonial-card:hover {
             transform: translateY(-4px);
-            border-color: rgba(245, 158, 11, 0.2);
+            border-color: rgba(213, 233, 30, 0.3);
         }
 
         /* Reduce motion */
@@ -356,43 +360,43 @@
         }
     </style>
 </head>
-<body class="bg-[#0a0a0f] text-white overflow-x-hidden">
+<body class="bg-[#E2DDCF] text-[#221D25] overflow-x-hidden">
 
     <!-- SCROLL PROGRESS BAR -->
     <div class="scroll-progress" id="scroll-progress"></div>
 
     <!-- NAVBAR -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#0a0a0f]/80 backdrop-blur-md border-b border-white/5">
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#E2DDCF]/90 backdrop-blur-md border-b border-[#221D25]/5">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
                 <a href="#" class="flex items-center gap-x-3 group">
-                    <img src="assets/images/logo-fresh.jpg" alt="Philly Creative" class="w-12 h-12 rounded-full object-cover bg-white border border-white/10 transition-transform group-hover:scale-105">
+                    <img src="assets/images/logo-fresh.jpg" alt="Philly Creative" class="w-12 h-12 rounded-full object-cover bg-[#E2DDCF] border border-[#221D25]/10 transition-transform group-hover:scale-105">
                     <div>
                         <div class="font-bold text-lg sm:text-xl tracking-tighter whitespace-nowrap">PHILLY CREATIVE</div>
-                        <div class="text-[10px] text-white/50 -mt-1 font-medium">EST 2023 • COLUMBUS, OH</div>
+                        <div class="text-[10px] text-[#221D25]/50 -mt-1 font-medium">EST 2023 • COLUMBUS, OH</div>
                     </div>
                 </a>
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
-                    <a href="#servicos" class="hover:text-amber-400 transition-colors">O que fazemos</a>
-                    <a href="#artes" class="hover:text-amber-400 transition-colors">Artes Digitais</a>
-                    <a href="#personalizado" class="hover:text-amber-400 transition-colors">Personalizado</a>
-                    <a href="#pacotes" class="hover:text-amber-400 transition-colors">Pacotes</a>
-                    <a href="#clientes" class="hover:text-amber-400 transition-colors">Clientes</a>
+                    <a href="#servicos" class="hover:text-[#D5E91E] transition-colors">O que fazemos</a>
+                    <a href="#artes" class="hover:text-[#D5E91E] transition-colors">Artes Digitais</a>
+                    <a href="#personalizado" class="hover:text-[#D5E91E] transition-colors">Personalizado</a>
+                    <a href="#pacotes" class="hover:text-[#D5E91E] transition-colors">Pacotes</a>
+                    <a href="#clientes" class="hover:text-[#D5E91E] transition-colors">Clientes</a>
                 </div>
 
                 <!-- CTA Buttons -->
                 <div class="flex items-center gap-x-3">
                     <a href="#contato"
-                       class="hidden sm:inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold rounded-2xl border border-white/20 hover:bg-white hover:text-[#0a0a0f] transition-all active:scale-[0.985] shine">
+                       class="hidden sm:inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold rounded-2xl border border-[#221D25]/20 hover:bg-[#221D25] hover:text-[#E2DDCF] transition-all active:scale-[0.985] shine">
                         Fale Conosco
                     </a>
 
                     <!-- Mobile Menu Button -->
                     <button id="mobile-menu-btn"
-                            class="md:hidden w-11 h-11 flex items-center justify-center text-white hover:bg-white/10 rounded-2xl transition-colors"
+                            class="md:hidden w-11 h-11 flex items-center justify-center text-[#221D25] hover:bg-[#221D25]/10 rounded-2xl transition-colors"
                             aria-label="Menu">
                         <i class="fa-solid fa-bars text-xl"></i>
                     </button>
@@ -401,15 +405,15 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-[#0a0a0f]">
+        <div id="mobile-menu" class="hidden md:hidden border-t border-[#221D25]/10 bg-[#E2DDCF]">
             <div class="px-6 py-6 flex flex-col gap-y-4 text-base font-medium">
                 <a href="#servicos" class="py-1 mobile-link">O que fazemos</a>
                 <a href="#artes" class="py-1 mobile-link">Artes Digitais</a>
                 <a href="#personalizado" class="py-1 mobile-link">Personalizado para seu negócio</a>
                 <a href="#pacotes" class="py-1 mobile-link">Nossos Pacotes</a>
                 <a href="#clientes" class="py-1 mobile-link">Nossos Clientes</a>
-                <div class="pt-4 border-t border-white/10 flex flex-col gap-y-3">
-                    <a href="#contato" class="py-3 text-center border border-white/20 rounded-2xl mobile-link">Fale Conosco</a>
+                <div class="pt-4 border-t border-[#221D25]/10 flex flex-col gap-y-3">
+                    <a href="#contato" class="py-3 text-center border border-[#221D25]/20 rounded-2xl mobile-link">Fale Conosco</a>
                 </div>
             </div>
         </div>
@@ -428,7 +432,7 @@
                 <div class="lg:col-span-7">
                     <div class="inline-flex items-center gap-x-2 glass rounded-3xl px-4 py-1.5 mb-6 reveal active">
                         <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                        <span class="text-xs font-semibold tracking-[1.5px] text-white/70">COLUMBUS, OHIO • ATENDEMOS TODO O PAÍS</span>
+                        <span class="text-xs font-semibold tracking-[1.5px] text-[#221D25]/70">COLUMBUS, OHIO • ATENDEMOS TODO O PAÍS</span>
                     </div>
 
                     <h1 class="heading-font text-6xl lg:text-7xl xl:text-8xl leading-[1.02] tracking-tighter font-black mb-6 reveal active reveal-delay-1">
@@ -436,48 +440,35 @@
                         <span class="gradient-text">Alguém sempre atende.</span>
                     </h1>
 
-                    <p class="max-w-lg text-2xl text-white/80 font-light tracking-tight mb-10 reveal active reveal-delay-2">
+                    <p class="max-w-lg text-2xl text-[#221D25]/80 font-light tracking-tight mb-10 reveal active reveal-delay-2">
                         Recepcionista virtual 24 horas por dia, em português, inglês e espanhol. Com número de telefone próprio e site profissional — tudo pronto pra transformar ligação em cliente, mesmo enquanto você trabalha.
                     </p>
 
                     <div class="flex flex-col sm:flex-row gap-4 reveal active reveal-delay-3">
                         <a href="#pacotes"
-                           class="cta-glow group inline-flex items-center justify-center gap-x-3 bg-white hover:bg-amber-400 text-[#0a0a0f] transition-all font-bold text-lg px-10 h-16 rounded-3xl active:scale-[0.985] shine">
+                           class="cta-glow group inline-flex items-center justify-center gap-x-3 bg-[#221D25] hover:bg-[#D5E91E] text-[#E2DDCF] hover:text-[#221D25] transition-all font-bold text-lg px-10 h-16 rounded-3xl active:scale-[0.985] shine">
                             <span>QUERO MEU RECEPCIONISTA 24/7</span>
                             <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                         </a>
 
                         <a href="#servicos"
-                           class="inline-flex items-center justify-center gap-x-3 glass-strong hover:bg-white/10 font-semibold text-base px-6 h-16 rounded-3xl transition-all active:scale-[0.985]">
+                           class="inline-flex items-center justify-center gap-x-3 glass-strong hover:bg-[#221D25]/10 font-semibold text-base px-6 h-16 rounded-3xl transition-all active:scale-[0.985]">
                             <span>Ver outros serviços</span>
                         </a>
                     </div>
 
-                    <!-- Stats Bar -->
-                    <div class="flex items-center gap-x-8 mt-12 reveal active reveal-delay-4">
-                        <div class="flex -space-x-2">
-                            <div class="w-9 h-9 bg-zinc-800 border-2 border-[#0a0a0f] rounded-full overflow-hidden"><img src="https://picsum.photos/id/1005/36/36" class="object-cover"></div>
-                            <div class="w-9 h-9 bg-zinc-800 border-2 border-[#0a0a0f] rounded-full overflow-hidden"><img src="https://picsum.photos/id/1011/36/36" class="object-cover"></div>
-                            <div class="w-9 h-9 bg-zinc-800 border-2 border-[#0a0a0f] rounded-full overflow-hidden"><img src="https://picsum.photos/id/1009/36/36" class="object-cover"></div>
-                            <div class="w-9 h-9 bg-amber-400 border-2 border-[#0a0a0f] rounded-full flex items-center justify-center text-[10px] font-black text-amber-900">+20</div>
-                        </div>
-                        <div class="text-white/60 text-sm">
-                            <div class="flex items-center gap-x-1 text-amber-400 mb-0.5">
-                                <i class="fa-solid fa-star text-xs"></i>
-                                <i class="fa-solid fa-star text-xs"></i>
-                                <i class="fa-solid fa-star text-xs"></i>
-                                <i class="fa-solid fa-star text-xs"></i>
-                                <i class="fa-solid fa-star text-xs"></i>
-                                <span class="text-white font-bold ml-1">4.8</span>
-                            </div>
-                            <span class="text-white/50">25+ avaliações de clientes satisfeitos</span>
+                    <!-- Trust Badge (sem números inventados) -->
+                    <div class="flex items-center gap-x-3 mt-12 reveal active reveal-delay-4">
+                        <div class="flex items-center gap-x-2 glass rounded-2xl px-4 py-2">
+                            <i class="fa-solid fa-shield-halved text-[#D5E91E]"></i>
+                            <span class="text-sm text-[#221D25]/70 font-medium">Atendimento real funcionando agora</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Hero Visual -->
                 <div class="lg:col-span-5 relative reveal active reveal-delay-3">
-                    <div class="relative rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl aspect-[4/3] lg:aspect-auto lg:h-[520px] glass-strong">
+                    <div class="relative rounded-[2rem] overflow-hidden border border-[#221D25]/10 shadow-2xl aspect-[4/3] lg:aspect-auto lg:h-[520px] glass-strong">
                         <img src="https://picsum.photos/id/1015/1200/1200"
                              class="absolute inset-0 w-full h-full object-cover brightness-[0.8]" alt="Mesa de trabalho criativa com laptop, caderno e materiais de design">
 
@@ -490,15 +481,15 @@
                         </div>
 
                         <div class="absolute bottom-0 left-0 right-0 p-8">
-                            <div class="glass-strong text-white p-5 rounded-2xl max-w-[280px]">
+                            <div class="glass-strong text-[#221D25] p-5 rounded-2xl max-w-[280px]">
                                 <div class="flex items-center gap-x-3 mb-3">
                                     <img src="assets/images/logo-fresh.jpg" alt="Philly Creative" class="w-10 h-10 rounded-xl flex-shrink-0">
                                     <div class="text-sm leading-tight">
                                         <div class="font-bold">PHILLY CREATIVE</div>
-                                        <div class="text-[10px] text-white/60">Marketing que converte</div>
+                                        <div class="text-[10px] text-[#221D25]/60">Marketing que converte</div>
                                     </div>
                                 </div>
-                                <div class="text-xs text-white/70">Design • Gestão de redes • Conteúdo que vende</div>
+                                <div class="text-xs text-[#221D25]/70">Design • Gestão de redes • Conteúdo que vende</div>
                             </div>
                         </div>
                     </div>
@@ -507,7 +498,7 @@
         </div>
 
         <!-- Scroll indicator -->
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-y-1 text-[10px] tracking-[2px] text-white/40">
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-y-1 text-[10px] tracking-[2px] text-[#221D25]/40">
             <div>ROLE PARA VER MAIS</div>
             <i class="fa-solid fa-chevron-down text-xs animate-bounce"></i>
         </div>
@@ -520,30 +511,30 @@
                 <h2 class="heading-font text-4xl lg:text-5xl tracking-tighter font-black mb-6 leading-tight">
                     Você não pode atender o telefone o tempo todo. Seu cliente também não espera.
                 </h2>
-                <p class="text-xl text-white/80 mb-10">
+                <p class="text-xl text-[#221D25]/80 mb-10">
                     Você está no meio de um serviço, dirigindo, ou já fechou o dia — e o telefone toca. Se ninguém atende, o cliente liga pro concorrente. O Recepcionista 24/7 garante que toda ligação seja atendida, em qualquer idioma, a qualquer hora.
                 </p>
 
                 <div class="space-y-4">
                     <div class="flex items-start gap-x-3 glass rounded-2xl p-5">
-                        <i class="fa-solid fa-phone-volume text-amber-400 text-xl mt-1 flex-shrink-0"></i>
-                        <span class="text-white/90">Atende ligações e mensagens 24 horas por dia, todos os dias</span>
+                        <i class="fa-solid fa-phone-volume text-[#D5E91E] text-xl mt-1 flex-shrink-0"></i>
+                        <span class="text-[#221D25]/90">Atende ligações e mensagens 24 horas por dia, todos os dias</span>
                     </div>
                     <div class="flex items-start gap-x-3 glass rounded-2xl p-5">
-                        <i class="fa-solid fa-language text-amber-400 text-xl mt-1 flex-shrink-0"></i>
-                        <span class="text-white/90">Fala com o cliente no idioma dele — português, inglês ou espanhol</span>
+                        <i class="fa-solid fa-language text-[#D5E91E] text-xl mt-1 flex-shrink-0"></i>
+                        <span class="text-[#221D25]/90">Fala com o cliente no idioma dele — português, inglês ou espanhol</span>
                     </div>
                     <div class="flex items-start gap-x-3 glass rounded-2xl p-5">
-                        <i class="fa-solid fa-calendar-check text-amber-400 text-xl mt-1 flex-shrink-0"></i>
-                        <span class="text-white/90">Marca horário, passa orçamento, tira dúvidas sobre o serviço</span>
+                        <i class="fa-solid fa-calendar-check text-[#D5E91E] text-xl mt-1 flex-shrink-0"></i>
+                        <span class="text-[#221D25]/90">Marca horário, passa orçamento, tira dúvidas sobre o serviço</span>
                     </div>
                     <div class="flex items-start gap-x-3 glass rounded-2xl p-5">
-                        <i class="fa-solid fa-mobile-screen text-amber-400 text-xl mt-1 flex-shrink-0"></i>
-                        <span class="text-white/90">Número de telefone próprio do negócio (separado do celular pessoal do dono)</span>
+                        <i class="fa-solid fa-mobile-screen text-[#D5E91E] text-xl mt-1 flex-shrink-0"></i>
+                        <span class="text-[#221D25]/90">Número de telefone próprio do negócio (separado do celular pessoal do dono)</span>
                     </div>
                     <div class="flex items-start gap-x-3 glass rounded-2xl p-5">
-                        <i class="fa-solid fa-laptop-code text-amber-400 text-xl mt-1 flex-shrink-0"></i>
-                        <span class="text-white/90">Site/landing page integrado, feito para fechar venda no primeiro contato</span>
+                        <i class="fa-solid fa-laptop-code text-[#D5E91E] text-xl mt-1 flex-shrink-0"></i>
+                        <span class="text-[#221D25]/90">Site/landing page integrado, feito para fechar venda no primeiro contato</span>
                     </div>
                 </div>
             </div>
@@ -556,84 +547,84 @@
             <div class="text-center mb-16 reveal">
                 <div class="inline-block px-4 py-1.5 rounded-full glass text-xs tracking-[2px] font-semibold mb-4">SERVIÇOS COMPLETOS</div>
                 <h2 class="heading-font text-5xl lg:text-6xl tracking-tighter font-black">O que fazemos?</h2>
-                <p class="mt-4 text-white/60 max-w-md mx-auto">Tudo o que seu negócio precisa para se destacar no digital.</p>
+                <p class="mt-4 text-[#221D25]/60 max-w-md mx-auto">Tudo o que seu negócio precisa para se destacar no digital.</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
                 <div class="service-item glass rounded-3xl p-7 flex gap-5 reveal">
-                    <i class="fa-solid fa-globe text-3xl text-amber-400 mt-1 w-9 flex-shrink-0"></i>
+                    <i class="fa-solid fa-globe text-3xl text-[#D5E91E] mt-1 w-9 flex-shrink-0"></i>
                     <div>
                         <div class="font-semibold text-xl mb-1">Gestão de página social</div>
-                        <div class="text-white/60 text-[15px]">Instagram, Facebook, TikTok e WhatsApp Business com estratégia profissional.</div>
+                        <div class="text-[#221D25]/60 text-[15px]">Instagram, Facebook, TikTok e WhatsApp Business com estratégia profissional.</div>
                     </div>
                 </div>
 
                 <div class="service-item glass rounded-3xl p-7 flex gap-5 reveal reveal-delay-1">
-                    <i class="fa-solid fa-pen-nib text-3xl text-amber-400 mt-1 w-9 flex-shrink-0"></i>
+                    <i class="fa-solid fa-pen-nib text-3xl text-[#D5E91E] mt-1 w-9 flex-shrink-0"></i>
                     <div>
                         <div class="font-semibold text-xl mb-1">Criação de conteúdo</div>
-                        <div class="text-white/60 text-[15px]">Posts, Reels, Stories e artes que geram engajamento e vendas.</div>
+                        <div class="text-[#221D25]/60 text-[15px]">Posts, Reels, Stories e artes que geram engajamento e vendas.</div>
                     </div>
                 </div>
 
                 <div class="service-item glass rounded-3xl p-7 flex gap-5 reveal reveal-delay-2">
-                    <i class="fa-solid fa-handshake text-3xl text-amber-400 mt-1 w-9 flex-shrink-0"></i>
+                    <i class="fa-solid fa-handshake text-3xl text-[#D5E91E] mt-1 w-9 flex-shrink-0"></i>
                     <div>
                         <div class="font-semibold text-xl mb-1">Engajamento de rede</div>
-                        <div class="text-white/60 text-[15px]">Interação ativa com seu público para aumentar alcance e fidelidade.</div>
+                        <div class="text-[#221D25]/60 text-[15px]">Interação ativa com seu público para aumentar alcance e fidelidade.</div>
                     </div>
                 </div>
 
                 <div class="service-item glass rounded-3xl p-7 flex gap-5 reveal">
-                    <i class="fa-solid fa-tags text-3xl text-amber-400 mt-1 w-9 flex-shrink-0"></i>
+                    <i class="fa-solid fa-tags text-3xl text-[#D5E91E] mt-1 w-9 flex-shrink-0"></i>
                     <div>
                         <div class="font-semibold text-xl mb-1">Artes para vendas</div>
-                        <div class="text-white/60 text-[15px]">Promoções, cardápios, combos e materiais que convertem.</div>
+                        <div class="text-[#221D25]/60 text-[15px]">Promoções, cardápios, combos e materiais que convertem.</div>
                     </div>
                 </div>
 
                 <div class="service-item glass rounded-3xl p-7 flex gap-5 reveal reveal-delay-1">
-                    <i class="fa-solid fa-id-card text-3xl text-amber-400 mt-1 w-9 flex-shrink-0"></i>
+                    <i class="fa-solid fa-id-card text-3xl text-[#D5E91E] mt-1 w-9 flex-shrink-0"></i>
                     <div>
                         <div class="font-semibold text-xl mb-1">Cartões de Visita + Logomarca</div>
-                        <div class="text-white/60 text-[15px]">Identidade visual completa e cartões profissionais de alto padrão.</div>
+                        <div class="text-[#221D25]/60 text-[15px]">Identidade visual completa e cartões profissionais de alto padrão.</div>
                     </div>
                 </div>
 
                 <div class="service-item glass rounded-3xl p-7 flex gap-5 reveal reveal-delay-2">
-                    <i class="fa-solid fa-file-lines text-3xl text-amber-400 mt-1 w-9 flex-shrink-0"></i>
+                    <i class="fa-solid fa-file-lines text-3xl text-[#D5E91E] mt-1 w-9 flex-shrink-0"></i>
                     <div>
                         <div class="font-semibold text-xl mb-1">Panfletos / Flyers + Cardápios</div>
-                        <div class="text-white/60 text-[15px]">Materiais impressos e digitais otimizados para conversão.</div>
+                        <div class="text-[#221D25]/60 text-[15px]">Materiais impressos e digitais otimizados para conversão.</div>
                     </div>
                 </div>
 
                 <div class="service-item glass rounded-3xl p-7 flex gap-5 reveal">
-                    <i class="fa-solid fa-laptop-code text-3xl text-amber-400 mt-1 w-9 flex-shrink-0"></i>
+                    <i class="fa-solid fa-laptop-code text-3xl text-[#D5E91E] mt-1 w-9 flex-shrink-0"></i>
                     <div>
                         <div class="font-semibold text-xl mb-1">Criação de Website</div>
-                        <div class="text-white/60 text-[15px]">Sites modernos, responsivos e otimizados para SEO e conversão.</div>
+                        <div class="text-[#221D25]/60 text-[15px]">Sites modernos, responsivos e otimizados para SEO e conversão.</div>
                     </div>
                 </div>
 
                 <div class="service-item glass rounded-3xl p-7 flex gap-5 reveal reveal-delay-1">
-                    <i class="fa-solid fa-qrcode text-3xl text-amber-400 mt-1 w-9 flex-shrink-0"></i>
+                    <i class="fa-solid fa-qrcode text-3xl text-[#D5E91E] mt-1 w-9 flex-shrink-0"></i>
                     <div>
                         <div class="font-semibold text-xl mb-1">Personalizados em geral</div>
-                        <div class="text-white/60 text-[15px]">QR Codes, link tree, materiais sob medida para sua marca.</div>
+                        <div class="text-[#221D25]/60 text-[15px]">QR Codes, link tree, materiais sob medida para sua marca.</div>
                     </div>
                 </div>
 
                 <div class="service-item glass rounded-3xl p-7 flex gap-5 reveal reveal-delay-2">
-                    <i class="fa-solid fa-rocket text-3xl text-amber-400 mt-1 w-9 flex-shrink-0"></i>
+                    <i class="fa-solid fa-rocket text-3xl text-[#D5E91E] mt-1 w-9 flex-shrink-0"></i>
                     <div>
                         <div class="font-semibold text-xl mb-1">Estratégia completa de marketing</div>
-                        <div class="text-white/60 text-[15px]">Do branding à execução, tudo para fazer seu negócio crescer.</div>
+                        <div class="text-[#221D25]/60 text-[15px]">Do branding à execução, tudo para fazer seu negócio crescer.</div>
                     </div>
                 </div>
             </div>
 
-            <div class="text-center mt-12 text-white/60 text-sm max-w-md mx-auto reveal">
+            <div class="text-center mt-12 text-[#221D25]/60 text-sm max-w-md mx-auto reveal">
                 Tudo isso e muito mais que o seu negócio precisa para se destacar no digital.
             </div>
         </div>
@@ -642,21 +633,21 @@
     <div class="section-divider"></div>
 
     <!-- ARTES DIGITAIS -->
-    <section id="artes" class="brochure-section py-24 bg-zinc-900/50">
+    <section id="artes" class="brochure-section py-24 bg-[#221D25]/5">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-y-4 reveal">
                 <div>
-                    <div class="text-amber-400 text-xs tracking-[2px] font-bold mb-2">PARA SEU NEGÓCIO</div>
+                    <div class="text-[#D5E91E] text-xs tracking-[2px] font-bold mb-2">PARA SEU NEGÓCIO</div>
                     <h2 class="heading-font text-4xl lg:text-5xl tracking-tighter font-black">Artes Digitais que vendem</h2>
                 </div>
-                <p class="text-white/70 max-w-sm">Exemplos reais de artes criadas para delivery, food service e negócios locais.</p>
+                <p class="text-[#221D25]/70 max-w-sm">Exemplos reais de artes criadas para delivery, food service e negócios locais.</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 <!-- Card 1 -->
                 <div class="gallery-card glass rounded-3xl overflow-hidden group reveal">
                     <div class="h-52 relative bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center p-6 overflow-hidden">
-                        <div class="text-center text-white relative z-10">
+                        <div class="text-center text-[#221D25] relative z-10">
                             <div class="text-xs tracking-widest opacity-75 mb-1">SALGADOS DA CIDADE</div>
                             <div class="font-black text-4xl leading-none tracking-tighter mb-2">QUALQUER PIZZA<br>POR R$25,00</div>
                             <div class="inline-block bg-white/90 text-black text-xs px-4 py-1 rounded-full font-bold">A MELHOR PIZZA DA CIDADE</div>
@@ -665,16 +656,16 @@
                     <div class="p-5 text-sm flex items-center justify-between">
                         <div>
                             <div class="font-semibold">Flyer Promoção</div>
-                            <div class="text-white/50 text-xs">Pizza + Bebida</div>
+                            <div class="text-[#221D25]/50 text-xs">Pizza + Bebida</div>
                         </div>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-white/40 group-hover:text-amber-400 transition-colors"></i>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[#221D25]/40 group-hover:text-[#D5E91E] transition-colors"></i>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
                 <div class="gallery-card glass rounded-3xl overflow-hidden group reveal reveal-delay-1">
                     <div class="h-52 relative bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center p-6">
-                        <div class="text-center text-white">
+                        <div class="text-center text-[#221D25]">
                             <div class="flex justify-center mb-3">
                                 <i class="fa-solid fa-glass-cheers text-4xl"></i>
                             </div>
@@ -685,18 +676,18 @@
                     <div class="p-5 text-sm flex items-center justify-between">
                         <div>
                             <div class="font-semibold">Combo Clássico</div>
-                            <div class="text-white/50 text-xs">Entrega inclusa</div>
+                            <div class="text-[#221D25]/50 text-xs">Entrega inclusa</div>
                         </div>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-white/40 group-hover:text-amber-400 transition-colors"></i>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[#221D25]/40 group-hover:text-[#D5E91E] transition-colors"></i>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
                 <div class="gallery-card glass rounded-3xl overflow-hidden group reveal reveal-delay-2">
-                    <div class="h-52 relative bg-[#0a0a0f] flex items-center justify-center p-6 border-b border-white/10">
+                    <div class="h-52 relative bg-[#221D25] flex items-center justify-center p-6 border-b border-[#221D25]/10">
                         <div class="text-center">
                             <div class="text-red-500 text-xs tracking-widest font-bold mb-1">MEGA COMBOS</div>
-                            <div class="font-black text-4xl tracking-[-2.5px] leading-none text-white">SALGADINHOS</div>
+                            <div class="font-black text-4xl tracking-[-2.5px] leading-none text-[#221D25]">SALGADINHOS</div>
                             <div class="mt-4 grid grid-cols-3 gap-2 text-xs">
                                 <div class="glass rounded-xl p-2">1 Coca + 30 salgados<br><span class="font-bold">R$25</span></div>
                                 <div class="glass rounded-xl p-2">1 Coca + 100 salgados<br><span class="font-bold">R$35</span></div>
@@ -707,16 +698,16 @@
                     <div class="p-5 text-sm flex items-center justify-between">
                         <div>
                             <div class="font-semibold">Campanha de Combos</div>
-                            <div class="text-white/50 text-xs">Alta conversão</div>
+                            <div class="text-[#221D25]/50 text-xs">Alta conversão</div>
                         </div>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-white/40 group-hover:text-amber-400 transition-colors"></i>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[#221D25]/40 group-hover:text-[#D5E91E] transition-colors"></i>
                     </div>
                 </div>
 
                 <!-- Card 4 -->
                 <div class="gallery-card glass rounded-3xl overflow-hidden group reveal">
                     <div class="h-52 relative bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center p-8">
-                        <div class="text-center text-white">
+                        <div class="text-center text-[#221D25]">
                             <i class="fa-solid fa-motorcycle text-5xl mb-4"></i>
                             <div class="font-black text-4xl tracking-tighter leading-none">BATEU A FOME?</div>
                             <div class="mt-3 text-sm">Peça um delivery agora!</div>
@@ -725,26 +716,26 @@
                     <div class="p-5 text-sm flex items-center justify-between">
                         <div>
                             <div class="font-semibold">Guaraná + Salgados</div>
-                            <div class="text-white/50 text-xs">Campanha de fome</div>
+                            <div class="text-[#221D25]/50 text-xs">Campanha de fome</div>
                         </div>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-white/40 group-hover:text-amber-400 transition-colors"></i>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[#221D25]/40 group-hover:text-[#D5E91E] transition-colors"></i>
                     </div>
                 </div>
 
                 <!-- Card 5 -->
                 <div class="gallery-card glass rounded-3xl overflow-hidden group reveal reveal-delay-1">
-                    <div class="h-52 bg-zinc-900 flex items-center justify-center p-6 relative">
-                        <div class="w-40 h-72 bg-[#0a0a0f] border border-white/20 rounded-3xl p-3 shadow-inner flex flex-col">
+                    <div class="h-52 bg-[#221D25] flex items-center justify-center p-6 relative">
+                        <div class="w-40 h-72 bg-[#221D25] border border-[#221D25]/20 rounded-3xl p-3 shadow-inner flex flex-col">
                             <div class="text-center mb-auto">
-                                <div class="text-amber-400 text-xs">QUICKS</div>
+                                <div class="text-[#D5E91E] text-xs">QUICKS</div>
                                 <div class="font-bold text-sm">Cardápio Digital</div>
                             </div>
                             <div class="space-y-1 text-xs">
-                                <div class="flex justify-between px-1"><span>Burgers</span><span class="text-white/40">→</span></div>
-                                <div class="flex justify-between px-1"><span>Porções</span><span class="text-white/40">→</span></div>
-                                <div class="flex justify-between px-1"><span>Bebidas</span><span class="text-white/40">→</span></div>
+                                <div class="flex justify-between px-1"><span>Burgers</span><span class="text-[#221D25]/40">→</span></div>
+                                <div class="flex justify-between px-1"><span>Porções</span><span class="text-[#221D25]/40">→</span></div>
+                                <div class="flex justify-between px-1"><span>Bebidas</span><span class="text-[#221D25]/40">→</span></div>
                             </div>
-                            <div class="mt-auto pt-2 border-t border-white/10 text-center">
+                            <div class="mt-auto pt-2 border-t border-[#221D25]/10 text-center">
                                 <div class="text-[10px] text-emerald-400 font-bold">PEDIR AGORA</div>
                             </div>
                         </div>
@@ -752,16 +743,16 @@
                     <div class="p-5 text-sm flex items-center justify-between">
                         <div>
                             <div class="font-semibold">App / Cardápio Digital</div>
-                            <div class="text-white/50 text-xs">UX otimizada para conversão</div>
+                            <div class="text-[#221D25]/50 text-xs">UX otimizada para conversão</div>
                         </div>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-white/40 group-hover:text-amber-400 transition-colors"></i>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[#221D25]/40 group-hover:text-[#D5E91E] transition-colors"></i>
                     </div>
                 </div>
 
                 <!-- Card 6 -->
                 <div class="gallery-card glass rounded-3xl overflow-hidden group reveal reveal-delay-2">
                     <div class="h-52 relative bg-gradient-to-br from-yellow-300 via-yellow-400 to-amber-500 flex items-center justify-center p-6">
-                        <div class="text-center text-zinc-950">
+                        <div class="text-center text-[#221D25]">
                             <div class="text-xs tracking-[1px] font-bold">TERÇA-FEIRA</div>
                             <div class="font-black text-5xl tracking-[-2px] leading-none">SALGADOS</div>
                             <div class="mt-1 text-sm font-semibold">50 salgados + Refri 2L<br><span class="font-black text-2xl">R$ 30,00</span></div>
@@ -770,9 +761,9 @@
                     <div class="p-5 text-sm flex items-center justify-between">
                         <div>
                             <div class="font-semibold">Promoção de Terça</div>
-                            <div class="text-white/50 text-xs">Alta performance</div>
+                            <div class="text-[#221D25]/50 text-xs">Alta performance</div>
                         </div>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-white/40 group-hover:text-amber-400 transition-colors"></i>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[#221D25]/40 group-hover:text-[#D5E91E] transition-colors"></i>
                     </div>
                 </div>
             </div>
@@ -783,27 +774,27 @@
     <section id="personalizado" class="brochure-section py-24">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-14 reveal">
-                <div class="text-amber-400 text-xs tracking-[2px] font-bold mb-2">MATERIAIS FÍSICOS E DIGITAIS</div>
+                <div class="text-[#D5E91E] text-xs tracking-[2px] font-bold mb-2">MATERIAIS FÍSICOS E DIGITAIS</div>
                 <h2 class="heading-font text-4xl lg:text-5xl tracking-tighter font-black">Personalizado para o seu negócio</h2>
-                <p class="mt-3 text-white/70 max-w-md mx-auto">Do digital ao impresso. Tudo com a cara da sua marca.</p>
+                <p class="mt-3 text-[#221D25]/70 max-w-md mx-auto">Do digital ao impresso. Tudo com a cara da sua marca.</p>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                 <div class="glass rounded-3xl p-4 text-center card-hover reveal">
-                    <div class="h-40 flex items-center justify-center bg-[#0a0a0f] rounded-2xl mb-4 overflow-hidden">
+                    <div class="h-40 flex items-center justify-center bg-[#221D25] rounded-2xl mb-4 overflow-hidden">
                         <div class="text-center px-4">
                             <div class="font-black text-xl tracking-tighter">PLASTERWORK<br>AND CONSTRUCTION LLC</div>
-                            <div class="text-[10px] mt-3 text-white/60">📞 (614) 284-1152</div>
-                            <div class="mt-4"><span class="px-3 py-px text-[9px] border border-white/30 rounded">QR CODE</span></div>
+                            <div class="text-[10px] mt-3 text-[#221D25]/60">📞 (614) 284-1152</div>
+                            <div class="mt-4"><span class="px-3 py-px text-[9px] border border-[#221D25]/30 rounded">QR CODE</span></div>
                         </div>
                     </div>
                     <div class="font-semibold text-sm">Placa de obra / Yard Sign</div>
                 </div>
 
                 <div class="glass rounded-3xl p-4 text-center card-hover reveal reveal-delay-1">
-                    <div class="h-40 flex items-center justify-center bg-[#0a0a0f] rounded-2xl mb-4 overflow-hidden">
+                    <div class="h-40 flex items-center justify-center bg-[#221D25] rounded-2xl mb-4 overflow-hidden">
                         <div class="text-center">
-                            <i class="fa-solid fa-book text-6xl text-white/80 mb-2"></i>
+                            <i class="fa-solid fa-book text-6xl text-[#221D25]/80 mb-2"></i>
                             <div class="text-xs">Catálogo / Brochura<br>profissional</div>
                         </div>
                     </div>
@@ -812,7 +803,7 @@
 
                 <div class="glass rounded-3xl p-4 text-center card-hover reveal reveal-delay-2">
                     <div class="h-40 flex items-center justify-center bg-gradient-to-br from-rose-100 to-amber-100 rounded-2xl mb-4 overflow-hidden relative">
-                        <div class="text-center text-zinc-800">
+                        <div class="text-center text-[#221D25]">
                             <div class="font-serif text-xl">Home & Garden</div>
                             <div class="text-xs mt-1">Residential • Commercial</div>
                             <div class="mt-6 text-[10px] border border-zinc-800/30 inline-block px-3 py-px rounded">QR CODE</div>
@@ -822,8 +813,8 @@
                 </div>
 
                 <div class="glass rounded-3xl p-4 text-center card-hover reveal reveal-delay-3">
-                    <div class="h-40 flex items-center justify-center bg-white rounded-2xl mb-4 overflow-hidden p-3">
-                        <div class="text-center text-zinc-900 w-full">
+                    <div class="h-40 flex items-center justify-center bg-[#E2DDCF] rounded-2xl mb-4 overflow-hidden p-3">
+                        <div class="text-center text-[#221D25] w-full">
                             <div class="font-black text-3xl tracking-tighter">AS</div>
                             <div class="text-xs">ARQ. SEBASTIAN</div>
                             <div class="text-[10px] mt-4">📞 (740) 972-0983</div>
@@ -834,7 +825,7 @@
 
                 <div class="glass rounded-3xl p-4 text-center card-hover reveal reveal-delay-4">
                     <div class="h-40 flex items-center justify-center bg-emerald-900 rounded-2xl mb-4 overflow-hidden relative">
-                        <div class="text-center text-white px-3">
+                        <div class="text-center text-[#221D25] px-3">
                             <div class="font-black">MEBRA<br>LANDSCAPING</div>
                             <div class="text-[10px] mt-1 opacity-75">📍 Columbus, OH</div>
                             <div class="mt-4"><span class="text-xs px-2 py-0.5 bg-white/20 rounded">SCAN ME</span></div>
@@ -844,10 +835,10 @@
                 </div>
 
                 <div class="glass rounded-3xl p-4 text-center card-hover reveal reveal-delay-5">
-                    <div class="h-40 flex items-center justify-center bg-white rounded-2xl mb-4 overflow-hidden">
+                    <div class="h-40 flex items-center justify-center bg-[#E2DDCF] rounded-2xl mb-4 overflow-hidden">
                         <div class="text-center">
-                            <div class="font-black text-4xl text-zinc-900 tracking-tighter">N&K</div>
-                            <div class="text-xs text-zinc-600">CLEANING SERVICES</div>
+                            <div class="font-black text-4xl text-[#221D25] tracking-tighter">N&K</div>
+                            <div class="text-xs text-[#221D25]/60">CLEANING SERVICES</div>
                             <div class="mt-3 text-emerald-600 text-xs font-bold">📞 (380) 555-0192</div>
                         </div>
                     </div>
@@ -858,18 +849,18 @@
     </section>
 
     <!-- PERSONALIZAÇÕES -->
-    <section class="brochure-section py-16 bg-zinc-900/50">
+    <section class="brochure-section py-16 bg-[#221D25]/5">
         <div class="max-w-7xl mx-auto px-6">
             <div class="mb-10 reveal">
-                <div class="text-amber-400 text-xs tracking-[2px] font-bold mb-2">BRANDING COMPLETO</div>
+                <div class="text-[#D5E91E] text-xs tracking-[2px] font-bold mb-2">BRANDING COMPLETO</div>
                 <h2 class="heading-font text-4xl lg:text-5xl tracking-tighter font-black">Personalizações que marcam presença</h2>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 <div class="glass rounded-3xl overflow-hidden reveal">
-                    <div class="h-40 bg-zinc-800 flex items-center justify-center p-5">
+                    <div class="h-40 bg-[#221D25] flex items-center justify-center p-5">
                         <div class="text-center">
-                            <i class="fa-solid fa-car text-6xl text-white/70 mb-3"></i>
+                            <i class="fa-solid fa-car text-6xl text-[#221D25]/70 mb-3"></i>
                             <div class="font-bold">Envelopamento<br>de Veículo</div>
                         </div>
                     </div>
@@ -877,9 +868,9 @@
                 </div>
 
                 <div class="glass rounded-3xl overflow-hidden reveal reveal-delay-1">
-                    <div class="h-40 bg-zinc-800 flex items-center justify-center p-5">
+                    <div class="h-40 bg-[#221D25] flex items-center justify-center p-5">
                         <div class="text-center">
-                            <i class="fa-solid fa-motorcycle text-6xl text-white/70 mb-3"></i>
+                            <i class="fa-solid fa-motorcycle text-6xl text-[#221D25]/70 mb-3"></i>
                             <div class="font-bold">Envelopamento<br>de Moto</div>
                         </div>
                     </div>
@@ -887,9 +878,9 @@
                 </div>
 
                 <div class="glass rounded-3xl overflow-hidden reveal reveal-delay-2">
-                    <div class="h-40 bg-zinc-800 flex items-center justify-center p-5">
+                    <div class="h-40 bg-[#221D25] flex items-center justify-center p-5">
                         <div class="text-center">
-                            <i class="fa-solid fa-mug-hot text-6xl text-white/70 mb-3"></i>
+                            <i class="fa-solid fa-mug-hot text-6xl text-[#221D25]/70 mb-3"></i>
                             <div class="font-bold">Canecas<br>Personalizadas</div>
                         </div>
                     </div>
@@ -897,9 +888,9 @@
                 </div>
 
                 <div class="glass rounded-3xl overflow-hidden reveal reveal-delay-3">
-                    <div class="h-40 bg-zinc-800 flex items-center justify-center p-5">
+                    <div class="h-40 bg-[#221D25] flex items-center justify-center p-5">
                         <div class="text-center">
-                            <i class="fa-solid fa-wine-glass text-6xl text-white/70 mb-3"></i>
+                            <i class="fa-solid fa-wine-glass text-6xl text-[#221D25]/70 mb-3"></i>
                             <div class="font-bold">Taças & Copos<br>Personalizados</div>
                         </div>
                     </div>
@@ -907,13 +898,13 @@
                 </div>
 
                 <div class="glass rounded-3xl overflow-hidden reveal reveal-delay-4 lg:col-span-1 md:col-span-3 col-span-2">
-                    <div class="h-40 bg-[#0a0a0f] flex items-center justify-center p-5 border-b border-white/10">
+                    <div class="h-40 bg-[#221D25] flex items-center justify-center p-5 border-b border-[#221D25]/10">
                         <div class="flex gap-3">
-                            <div class="w-20 h-36 bg-zinc-900 border border-white/20 rounded-3xl p-2 text-xs">
-                                <div class="text-center text-amber-400 text-[9px]">QUICKS</div>
+                            <div class="w-20 h-36 bg-[#221D25] border border-[#221D25]/20 rounded-3xl p-2 text-xs">
+                                <div class="text-center text-[#D5E91E] text-[9px]">QUICKS</div>
                                 <div class="text-center font-bold text-xs mt-1">Cardápio</div>
                             </div>
-                            <div class="w-20 h-36 bg-zinc-900 border border-white/20 rounded-3xl p-2 text-xs">
+                            <div class="w-20 h-36 bg-[#221D25] border border-[#221D25]/20 rounded-3xl p-2 text-xs">
                                 <div class="text-center text-emerald-400 text-[9px]">APP</div>
                                 <div class="text-center font-bold text-xs mt-1">Mobile First</div>
                             </div>
@@ -925,41 +916,16 @@
         </div>
     </section>
 
-    <!-- STATS BAR -->
-    <section class="py-16 relative overflow-hidden">
-        <div class="orb orb-1" style="opacity: 0.08;"></div>
-        <div class="max-w-5xl mx-auto px-6 relative z-10">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div class="reveal">
-                    <div class="stat-number heading-font text-5xl font-black gradient-text" data-target="20">0</div>
-                    <div class="text-white/60 text-sm mt-2">Clientes atendidos</div>
-                </div>
-                <div class="reveal reveal-delay-1">
-                    <div class="stat-number heading-font text-5xl font-black gradient-text" data-target="150">0</div>
-                    <div class="text-white/60 text-sm mt-2">Artes criadas</div>
-                </div>
-                <div class="reveal reveal-delay-2">
-                    <div class="stat-number heading-font text-5xl font-black gradient-text" data-target="4" data-suffix=".8">0</div>
-                    <div class="text-white/60 text-sm mt-2">Avaliação média</div>
-                </div>
-                <div class="reveal reveal-delay-3">
-                    <div class="stat-number heading-font text-5xl font-black gradient-text" data-target="100" data-suffix="%">0</div>
-                    <div class="text-white/60 text-sm mt-2">Clientes satisfeitos</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- AUMENTE SUA PRESENÇA -->
-    <section class="brochure-section py-24 bg-zinc-900/50">
+    <section class="brochure-section py-24 bg-[#221D25]/5">
         <div class="max-w-5xl mx-auto px-6 text-center">
             <div class="max-w-2xl mx-auto reveal">
                 <h2 class="heading-font text-5xl lg:text-6xl tracking-tighter font-black mb-6">Aumente sua <span class="gradient-text">presença.</span></h2>
-                <p class="text-2xl text-white/80">Quem não é visto não é lembrado!!</p>
+                <p class="text-2xl text-[#221D25]/80">Quem não é visto não é lembrado!!</p>
 
                 <div class="my-10 text-left glass-strong rounded-3xl p-9">
                     <p class="text-xl">Já imaginou chegar nas suas redes sociais e ver seus seguidores e curtidas aumentando?</p>
-                    <p class="mt-4 text-white/70">Tudo isso pelo fato de você ter um perfil mais profissional.</p>
+                    <p class="mt-4 text-[#221D25]/70">Tudo isso pelo fato de você ter um perfil mais profissional.</p>
                 </div>
 
                 <div class="inline-flex items-center gap-x-2 text-sm glass px-5 h-12 rounded-3xl">
@@ -975,11 +941,11 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-12 gap-y-4 reveal">
                 <div>
-                    <div class="text-amber-400 text-xs tracking-[2px] font-bold mb-2">OPINIÃO DE QUEM MAIS IMPORTA</div>
+                    <div class="text-[#D5E91E] text-xs tracking-[2px] font-bold mb-2">OPINIÃO DE QUEM MAIS IMPORTA</div>
                     <h2 class="heading-font text-4xl lg:text-5xl tracking-tighter font-black">Alguns de nossos clientes</h2>
                 </div>
                 <div class="flex items-center gap-x-3 glass rounded-2xl px-5 py-3">
-                    <div class="flex text-amber-400">
+                    <div class="flex text-[#D5E91E]">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -988,7 +954,7 @@
                     </div>
                     <div>
                         <span class="font-black text-2xl">4.8</span>
-                        <span class="text-white/60">(25 avaliações)</span>
+                        <span class="text-[#221D25]/60">(25 avaliações)</span>
                     </div>
                 </div>
             </div>
@@ -1000,30 +966,30 @@
                         <div class="w-12 h-12 bg-yellow-400 rounded-2xl flex-shrink-0 flex items-center justify-center text-yellow-900 font-black text-xl">K</div>
                         <div class="flex-1 min-w-0">
                             <div class="font-bold">King Food</div>
-                            <div class="text-xs text-white/50 mb-3">Columbus, OH</div>
-                            <p class="text-sm text-white/80">"Meu perfil se tornou mais profissional e as vendas aumentaram muito obrigado por ter nos ajudado."</p>
+                            <div class="text-xs text-[#221D25]/50 mb-3">Columbus, OH</div>
+                            <p class="text-sm text-[#221D25]/80">"Meu perfil se tornou mais profissional e as vendas aumentaram muito obrigado por ter nos ajudado."</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="testimonial-card glass p-7 rounded-3xl reveal reveal-delay-1">
                     <div class="flex gap-x-4 items-start">
-                        <div class="w-12 h-12 bg-white rounded-2xl flex-shrink-0 flex items-center justify-center text-zinc-900 font-black text-xl">V</div>
+                        <div class="w-12 h-12 bg-[#E2DDCF] rounded-2xl flex-shrink-0 flex items-center justify-center text-[#221D25] font-black text-xl">V</div>
                         <div class="flex-1 min-w-0">
                             <div class="font-bold">Vipiana Cleaning</div>
-                            <div class="text-xs text-white/50 mb-3">Columbus, OH</div>
-                            <p class="text-sm text-white/80">"Me ajudou muito ter uma logomarca personalizada, pude fazer meus uniformes por ter nos ajudado."</p>
+                            <div class="text-xs text-[#221D25]/50 mb-3">Columbus, OH</div>
+                            <p class="text-sm text-[#221D25]/80">"Me ajudou muito ter uma logomarca personalizada, pude fazer meus uniformes por ter nos ajudado."</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="testimonial-card glass p-7 rounded-3xl reveal reveal-delay-2">
                     <div class="flex gap-x-4 items-start">
-                        <div class="w-12 h-12 bg-red-500 rounded-2xl flex-shrink-0 flex items-center justify-center text-white font-black text-xl">B</div>
+                        <div class="w-12 h-12 bg-red-500 rounded-2xl flex-shrink-0 flex items-center justify-center text-[#221D25] font-black text-xl">B</div>
                         <div class="flex-1 min-w-0">
                             <div class="font-bold">Barbearia 7</div>
-                            <div class="text-xs text-white/50 mb-3">Columbus, OH</div>
-                            <p class="text-sm text-white/80">"Muito obrigado, eu estou muito satisfeito com seu trabalho, feito com muita dedicação."</p>
+                            <div class="text-xs text-[#221D25]/50 mb-3">Columbus, OH</div>
+                            <p class="text-sm text-[#221D25]/80">"Muito obrigado, eu estou muito satisfeito com seu trabalho, feito com muita dedicação."</p>
                         </div>
                     </div>
                 </div>
@@ -1099,50 +1065,50 @@
     </section>
 
     <!-- O QUE OFERECEMOS -->
-    <section class="brochure-section py-24 bg-zinc-900/50">
+    <section class="brochure-section py-24 bg-[#221D25]/5">
         <div class="max-w-4xl mx-auto px-6 text-center">
             <h2 class="heading-font text-4xl lg:text-5xl tracking-tighter font-black mb-6 reveal">O que oferecemos para você?</h2>
 
             <div class="space-y-8 text-left max-w-2xl mx-auto mt-10">
                 <div class="reveal">
                     <div class="font-bold text-xl mb-2">Você sempre quis ter uma página de sucesso?</div>
-                    <p class="text-white/70">Podemos te ajudar! Criamos conteúdos com artes atrativas e chamativas que cativam e fazem sua página se tornar profissional.</p>
+                    <p class="text-[#221D25]/70">Podemos te ajudar! Criamos conteúdos com artes atrativas e chamativas que cativam e fazem sua página se tornar profissional.</p>
                 </div>
 
                 <div class="reveal reveal-delay-1">
                     <div class="font-bold text-xl mb-2">Como tudo isso pode me ajudar?</div>
-                    <p class="text-white/70">Já ouviu aquele ditado: "A primeira impressão é a que fica"? Pois bem, seus seguidores e futuros clientes gostam de ver que você trabalha de forma profissional. Se você cuida bem da aparência da sua página, você já está um passo para o sucesso.</p>
+                    <p class="text-[#221D25]/70">Já ouviu aquele ditado: "A primeira impressão é a que fica"? Pois bem, seus seguidores e futuros clientes gostam de ver que você trabalha de forma profissional. Se você cuida bem da aparência da sua página, você já está um passo para o sucesso.</p>
                 </div>
 
-                <div class="pt-6 border-t border-white/10 reveal reveal-delay-2">
-                    <div class="font-bold text-xl mb-2 text-amber-400">Um passo para o sucesso!</div>
-                    <p class="text-white/70">Agora que você já sabe o que tem que ser feito, é hora de você conferir como podemos te ajudar...</p>
+                <div class="pt-6 border-t border-[#221D25]/10 reveal reveal-delay-2">
+                    <div class="font-bold text-xl mb-2 text-[#D5E91E]">Um passo para o sucesso!</div>
+                    <p class="text-[#221D25]/70">Agora que você já sabe o que tem que ser feito, é hora de você conferir como podemos te ajudar...</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- PACOTES -->
-    <section id="pacotes" class="brochure-section py-24 bg-zinc-900/50 border-t border-white/5">
+    <section id="pacotes" class="brochure-section py-24 bg-[#221D25]/5 border-t border-[#221D25]/5">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-14 reveal">
-                <div class="text-amber-400 text-xs tracking-[2px] font-bold mb-2">ESCOLHA SEU PLANO</div>
+                <div class="text-[#D5E91E] text-xs tracking-[2px] font-bold mb-2">ESCOLHA SEU PLANO</div>
                 <h2 class="heading-font text-5xl lg:text-6xl tracking-tighter font-black">Nossos Pacotes</h2>
-                <p class="mt-3 text-white/70">Além do atendimento, também cuidamos da sua presença digital.</p>
+                <p class="mt-3 text-[#221D25]/70">Além do atendimento, também cuidamos da sua presença digital.</p>
             </div>
 
             <div class="grid lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
 
                 <!-- RECEPCIONISTA 24/7 — MAIS ESCOLHIDO -->
                 <div class="package-card popular glass rounded-3xl p-8 flex flex-col h-full relative reveal">
-                    <div class="absolute -top-3 right-6 bg-blue-500 text-white text-xs font-bold px-4 py-1 rounded-full flex items-center gap-x-1">
+                    <div class="absolute -top-3 right-6 bg-blue-500 text-[#221D25] text-xs font-bold px-4 py-1 rounded-full flex items-center gap-x-1">
                         <i class="fa-solid fa-rocket text-xs"></i>
                         <span>MAIS ESCOLHIDO</span>
                     </div>
 
                     <div>
                         <div class="font-black text-3xl tracking-tighter">Recepcionista 24/7</div>
-                        <div class="text-white/60 mt-1 text-sm">Setup completo do seu atendimento: número de telefone dedicado, recepcionista com IA em 3 idiomas e site pronto para converter.</div>
+                        <div class="text-[#221D25]/60 mt-1 text-sm">Setup completo do seu atendimento: número de telefone dedicado, recepcionista com IA em 3 idiomas e site pronto para converter.</div>
                     </div>
 
                     <div class="my-8 space-y-[13px] flex-1 text-sm">
@@ -1164,15 +1130,15 @@
                 <div class="package-card glass rounded-3xl p-8 flex flex-col h-full reveal reveal-delay-1">
                     <div>
                         <div class="font-black text-3xl tracking-tighter">Standard</div>
-                        <div class="text-white/60 mt-1 text-sm">Ideal para começar</div>
+                        <div class="text-[#221D25]/60 mt-1 text-sm">Ideal para começar</div>
                     </div>
 
                     <div class="my-8 space-y-4 flex-1">
-                        <div class="flex justify-between items-baseline border-b border-white/10 pb-3">
+                        <div class="flex justify-between items-baseline border-b border-[#221D25]/10 pb-3">
                             <div>5 artes visuais</div>
                             <div class="font-bold text-xl">$40</div>
                         </div>
-                        <div class="flex justify-between items-baseline border-b border-white/10 pb-3">
+                        <div class="flex justify-between items-baseline border-b border-[#221D25]/10 pb-3">
                             <div>5 Vídeos com engajamentos</div>
                             <div class="font-bold text-xl">$55</div>
                         </div>
@@ -1183,20 +1149,20 @@
                     </div>
 
                     <a href="#contato"
-                       class="mt-auto block text-center bg-white/10 hover:bg-white hover:text-[#0a0a0f] transition-all font-bold py-4 rounded-2xl text-sm tracking-wider shine">
+                       class="mt-auto block text-center bg-[#221D25] hover:bg-[#D5E91E] hover:text-[#221D25] text-[#E2DDCF] transition-all font-bold py-4 rounded-2xl text-sm tracking-wider shine">
                         QUERO AUMENTAR MEUS CLIENTES!
                     </a>
                 </div>
 
                 <!-- PREMIUM -->
                 <div class="package-card glass rounded-3xl p-8 flex flex-col h-full relative reveal reveal-delay-2">
-                    <div class="absolute -top-3 right-6 bg-amber-400 text-zinc-950 text-xs font-black px-4 py-1 rounded-full flex items-center gap-x-1">
+                    <div class="absolute -top-3 right-6 bg-[#D5E91E] text-[#221D25] text-xs font-black px-4 py-1 rounded-full flex items-center gap-x-1">
                         <span>RECOMENDADO</span>
                     </div>
 
                     <div>
                         <div class="font-black text-3xl tracking-tighter">Premium Mensal</div>
-                        <div class="text-white/60 mt-1 text-sm">Gestão contínua e resultados constantes</div>
+                        <div class="text-[#221D25]/60 mt-1 text-sm">Gestão contínua e resultados constantes</div>
                     </div>
 
                     <div class="my-8 space-y-[13px] flex-1 text-sm">
@@ -1209,18 +1175,18 @@
                     </div>
 
                     <a href="#contato"
-                       class="mt-auto block text-center bg-gradient-to-r from-amber-400 to-yellow-500 text-zinc-950 font-black py-4 rounded-2xl text-sm tracking-wider hover:brightness-105 transition-all shine">
+                       class="mt-auto block text-center bg-gradient-to-r from-[#D5E91E] to-[#855BD2] text-[#221D25] font-black py-4 rounded-2xl text-sm tracking-wider hover:brightness-105 transition-all shine">
                         QUERO ME DESTACAR DA MULTIDÃO!
                     </a>
                 </div>
             </div>
 
-            <div class="text-center mt-8 text-xs text-white/50 reveal">Todos os pacotes podem ser personalizados. Fale conosco para montar o plano ideal para o seu negócio.</div>
+            <div class="text-center mt-8 text-xs text-[#221D25]/50 reveal">Todos os pacotes podem ser personalizados. Fale conosco para montar o plano ideal para o seu negócio.</div>
         </div>
     </section>
 
     <!-- CONTATO -->
-    <section id="contato" class="brochure-section py-24 border-t border-white/5 relative overflow-hidden">
+    <section id="contato" class="brochure-section py-24 border-t border-[#221D25]/5 relative overflow-hidden">
         <div class="orb orb-2" style="opacity: 0.06;"></div>
         <div class="max-w-5xl mx-auto px-6 relative z-10">
             <div class="grid lg:grid-cols-2 gap-x-16 gap-y-12 items-center">
@@ -1232,12 +1198,12 @@
 
                     <div class="mt-8 space-y-6 text-lg">
                         <div>
-                            <div class="text-white/60 text-sm tracking-wider">ESTAMOS LOCALIZADOS EM</div>
+                            <div class="text-[#221D25]/60 text-sm tracking-wider">ESTAMOS LOCALIZADOS EM</div>
                             <div class="font-semibold text-2xl">Columbus, Ohio</div>
                         </div>
 
                         <div>
-                            <div class="text-white/60 text-sm tracking-wider">ATENDEMOS</div>
+                            <div class="text-[#221D25]/60 text-sm tracking-wider">ATENDEMOS</div>
                             <div class="font-semibold text-2xl">Em todo o País • Brasil & Estados Unidos</div>
                         </div>
                     </div>
@@ -1256,13 +1222,13 @@
                         </a>
 
                         <a href="https://www.instagram.com/phillycreative.design" target="_blank"
-                           class="inline-flex items-center justify-center gap-x-2.5 glass hover:bg-white/10 transition-all font-bold px-4 sm:px-6 h-16 rounded-2xl text-sm sm:text-base">
+                           class="inline-flex items-center justify-center gap-x-2.5 glass hover:bg-[#221D25]/10 transition-all font-bold px-4 sm:px-6 h-16 rounded-2xl text-sm sm:text-base">
                             <i class="fa-brands fa-instagram text-xl"></i>
                             <span>Instagram</span>
                         </a>
 
                         <a href="mailto:contato@phillycreative.com"
-                           class="inline-flex items-center justify-center gap-x-2.5 glass hover:bg-white/10 transition-all font-bold px-4 sm:px-6 h-16 rounded-2xl text-sm sm:text-base">
+                           class="inline-flex items-center justify-center gap-x-2.5 glass hover:bg-[#221D25]/10 transition-all font-bold px-4 sm:px-6 h-16 rounded-2xl text-sm sm:text-base">
                             <i class="fa-solid fa-envelope text-xl"></i>
                             <span>Email</span>
                         </a>
@@ -1276,23 +1242,23 @@
                     <form id="contact-form" class="space-y-5">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div>
-                                <label class="text-xs text-white/60 block mb-1.5">NOME COMPLETO</label>
-                                <input id="form-name" type="text" class="form-input w-full bg-[#0a0a0f] border border-white/20 rounded-2xl px-5 h-12 text-sm outline-none" placeholder="Seu nome" required>
+                                <label class="text-xs text-[#221D25]/60 block mb-1.5">NOME COMPLETO</label>
+                                <input id="form-name" type="text" class="form-input w-full bg-[#221D25] border border-[#221D25]/20 rounded-2xl px-5 h-12 text-sm outline-none" placeholder="Seu nome" required>
                             </div>
                             <div>
-                                <label class="text-xs text-white/60 block mb-1.5">TELEFONE / WHATSAPP</label>
-                                <input id="form-phone" type="tel" class="form-input w-full bg-[#0a0a0f] border border-white/20 rounded-2xl px-5 h-12 text-sm outline-none" placeholder="(614) 555-0192" required>
+                                <label class="text-xs text-[#221D25]/60 block mb-1.5">TELEFONE / WHATSAPP</label>
+                                <input id="form-phone" type="tel" class="form-input w-full bg-[#221D25] border border-[#221D25]/20 rounded-2xl px-5 h-12 text-sm outline-none" placeholder="(614) 555-0192" required>
                             </div>
                         </div>
 
                         <div>
-                            <label class="text-xs text-white/60 block mb-1.5">NOME DO SEU NEGÓCIO</label>
-                            <input id="form-business" type="text" class="form-input w-full bg-[#0a0a0f] border border-white/20 rounded-2xl px-5 h-12 text-sm outline-none" placeholder="Ex: Next Trim Carpentry" required>
+                            <label class="text-xs text-[#221D25]/60 block mb-1.5">NOME DO SEU NEGÓCIO</label>
+                            <input id="form-business" type="text" class="form-input w-full bg-[#221D25] border border-[#221D25]/20 rounded-2xl px-5 h-12 text-sm outline-none" placeholder="Ex: Next Trim Carpentry" required>
                         </div>
 
                         <div>
-                            <label class="text-xs text-white/60 block mb-1.5">O QUE VOCÊ PRECISA?</label>
-                            <select id="form-service" class="form-input w-full bg-[#0a0a0f] border border-white/20 rounded-2xl px-5 h-12 text-sm outline-none">
+                            <label class="text-xs text-[#221D25]/60 block mb-1.5">O QUE VOCÊ PRECISA?</label>
+                            <select id="form-service" class="form-input w-full bg-[#221D25] border border-[#221D25]/20 rounded-2xl px-5 h-12 text-sm outline-none">
                                 <option>Recepcionista 24/7</option>
                                 <option>Pacote Standard</option>
                                 <option>Pacote Solution</option>
@@ -1305,16 +1271,16 @@
                         </div>
 
                         <div>
-                            <label class="text-xs text-white/60 block mb-1.5">MENSAGEM / DETALHES</label>
-                            <textarea id="form-message" rows="3" class="form-input w-full bg-[#0a0a0f] border border-white/20 rounded-3xl px-5 py-4 text-sm outline-none resize-y min-h-[90px]" placeholder="Conte mais sobre seu negócio e objetivos..."></textarea>
+                            <label class="text-xs text-[#221D25]/60 block mb-1.5">MENSAGEM / DETALHES</label>
+                            <textarea id="form-message" rows="3" class="form-input w-full bg-[#221D25] border border-[#221D25]/20 rounded-3xl px-5 py-4 text-sm outline-none resize-y min-h-[90px]" placeholder="Conte mais sobre seu negócio e objetivos..."></textarea>
                         </div>
 
                         <button type="submit"
-                                class="w-full bg-white hover:bg-amber-400 hover:text-white transition-all text-[#0a0a0f] font-black tracking-wider py-4 rounded-2xl text-sm active:scale-[0.985] shine">
+                                class="w-full bg-[#221D25] hover:bg-[#D5E91E] text-[#E2DDCF] hover:text-[#221D25] transition-all font-black tracking-wider py-4 rounded-2xl text-sm active:scale-[0.985] shine">
                             ENVIAR MENSAGEM E COMEÇAR AGORA
                         </button>
 
-                        <div class="text-center text-[10px] text-white/40">Respondemos em até 2 horas úteis</div>
+                        <div class="text-center text-[10px] text-[#221D25]/40">Respondemos em até 2 horas úteis</div>
                     </form>
                 </div>
             </div>
@@ -1322,12 +1288,12 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-black py-12 border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-6 text-center text-xs text-white/50">
+    <footer class="bg-[#221D25] py-12 border-t border-[#221D25]/10">
+        <div class="max-w-7xl mx-auto px-6 text-center text-xs text-[#221D25]/50">
             <div class="flex justify-center mb-4">
                 <div class="flex items-center gap-x-2">
                     <img src="assets/images/logo-fresh.jpg" alt="Philly Creative" class="w-8 h-8 rounded-xl">
-                    <span class="font-semibold text-white tracking-tighter">PHILLY CREATIVE</span>
+                    <span class="font-semibold text-[#221D25] tracking-tighter">PHILLY CREATIVE</span>
                 </div>
             </div>
 
@@ -1338,11 +1304,11 @@
 
     <!-- FLOATING WHATSAPP -->
     <a href="https://wa.me/12678265740" target="_blank" class="float-wa" aria-label="Falar no WhatsApp">
-        <i class="fa-brands fa-whatsapp text-3xl text-white"></i>
+        <i class="fa-brands fa-whatsapp text-3xl text-[#221D25]"></i>
     </a>
 
     <!-- MOBILE STICKY CTA -->
-    <div class="mobile-cta-bar glass-strong border-t border-white/10 px-4 py-3 flex gap-3">
+    <div class="mobile-cta-bar glass-strong border-t border-[#221D25]/10 px-4 py-3 flex gap-3">
         <a href="https://wa.me/12678265740" target="_blank"
            class="flex-1 inline-flex items-center justify-center gap-x-2 bg-emerald-600 font-bold text-sm py-3 rounded-2xl">
             <i class="fa-brands fa-whatsapp text-lg"></i>
@@ -1354,7 +1320,7 @@
             Ligar Agora
         </a>
         <a href="#pacotes"
-           class="flex-1 inline-flex items-center justify-center gap-x-2 bg-white text-[#0a0a0f] font-bold text-sm py-3 rounded-2xl">
+           class="flex-1 inline-flex items-center justify-center gap-x-2 bg-[#221D25] text-[#E2DDCF] font-bold text-sm py-3 rounded-2xl">
             Ver Pacotes
         </a>
     </div>
@@ -1544,7 +1510,7 @@
         // === TOAST ===
         function showToast() {
             const toast = document.createElement('div');
-            toast.className = 'fixed bottom-6 right-6 glass-strong text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-x-3 z-[100]';
+            toast.className = 'fixed bottom-6 right-6 glass-strong text-[#221D25] px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-x-3 z-[100]';
             toast.style.opacity = '0';
             toast.style.transform = 'translateY(20px)';
             toast.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
@@ -1552,7 +1518,7 @@
                 <i class="fa-solid fa-check-circle text-emerald-400 text-xl"></i>
                 <div>
                     <div class="font-semibold">Recebemos sua mensagem!</div>
-                    <div class="text-xs text-white/60">Nossa equipe responderá em breve via WhatsApp.</div>
+                    <div class="text-xs text-[#221D25]/60">Nossa equipe responderá em breve via WhatsApp.</div>
                 </div>
             `;
             document.body.appendChild(toast);
@@ -1596,11 +1562,11 @@
             // Register Service Worker for PWA
             if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.register('./sw.js').then(() => {
-                    console.log('%c[Philly Creative v2] PWA Service Worker registrado.', 'color:#f59e0b');
+                    console.log('%c[Philly Creative v2] PWA Service Worker registrado.', 'color:#D5E91E');
                 }).catch(err => console.warn('SW registration failed:', err));
             }
 
-            console.log('%c[Philly Creative v2] Website inicializado com sucesso. UX premium ativo.', 'color:#f59e0b');
+            console.log('%c[Philly Creative v2] Website inicializado com sucesso. UX premium ativo.', 'color:#D5E91E');
         });
     </script>
 </body>
